@@ -1,0 +1,27 @@
+TASK 2 — FINDINGS & JUSTIFICATION
+===================================
+
+We combined three tables (market_daily_snapshots, orders, trades)
+to build a transparent multi-signal suspicion score for each market.
+
+SIGNALS USED (with weights):
+  1. Price movement (bps)               20% — large price swings are suspicious
+                                              *if* the market is also illiquid
+  2. Low avg unique buyers              25% — few participants = easier manipulation
+  3. Cancel rate (cancels/orders)       15% — high cancels suggest spoofing
+  4. Low fill ratio                     10% — orders that are rarely filled = spoofing
+  5. Self-trade rate                    15% — buyer = seller = strong collusion signal
+  6. Top pair concentration             10% — most volume through one counterparty pair
+  7. Late-trade share (last 60 min)      5% — last-minute positioning / ramping
+
+COUNTER-HYPOTHESES (why a flagged market might NOT be fraud):
+  - Low unique buyers can reflect a genuinely niche/illiquid market
+  - High cancel rates can arise from legitimate limit-order strategies
+  - API-based trading is not fraud by itself (market makers use APIs)
+  - Concentrated counterparties may reflect a small, legitimate user base
+
+See top10_suspicious_markets.csv for the full ranked list.
+Figures saved: fig1_price_timeseries_all_markets.png,
+               fig2_top10_suspicion_scores.png,
+               fig3_price_vs_breadth.png,
+               fig4_cancel_rate_top20.png

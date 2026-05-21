@@ -32,13 +32,83 @@ Fraud Detection Seminar — Polymarket-style dataset
 
 ## Slide 4 — How tables connect (join plan)
 
+**Easiest:** Insert image → `output/task1/task1_join_diagram.png` (ready-made for PowerPoint)
+
+**Or copy this text diagram** (Text Box, monospace font e.g. Consolas 11pt):
+
 ```
-market_id  →  links markets, orders, trades, snapshots
-trader_id  →  links traders, orders, sessions, transfers, features
-order_id   →  links orders ↔ trades (buy side / sell side)
+                    ┌─────────────────────────────────────────┐
+                    │           MARKET LAYER                  │
+                    │  ┌──────────┐    ┌──────────────────┐  │
+                    │  │ markets  │    │ daily snapshots  │  │
+                    │  └────┬─────┘    └────────┬─────────┘  │
+                    │       │    market_id      │            │
+                    └───────┼───────────────────┼────────────┘
+                            │                   │
+                            ▼                   ▼
+                    ┌─────────────────────────────────────────┐
+                    │         EXECUTION LAYER                 │
+                    │  ┌──────────┐         ┌──────────┐     │
+                    │  │  orders  │◄───────►│  trades  │     │
+                    │  └────┬─────┘ order_id └────┬─────┘     │
+                    │       │    trader_id       │            │
+                    └───────┼────────────────────┼────────────┘
+                            │                    │
+                            ▼                    ▼
+                    ┌─────────────────────────────────────────┐
+                    │          ACCOUNT LAYER                  │
+                    │  ┌──────────┐                          │
+                    │  │ traders  │◄─── trader_id ───────────┼──┐
+                    │  └────┬─────┘                          │  │
+                    │       │                                │  │
+                    │   ┌───┴───┬───────────┬────────────┐  │  │
+                    │   ▼       ▼           ▼            ▼  │  │
+                    │ sessions transfers  daily features  │  │
+                    │ (device, IP) (cash)  (risk scores)   │  │
+                    └─────────────────────────────────────────┘  │
+                                                                 │
+              Join keys:  market_id · trader_id · order_id ◄────┘
 ```
 
-**Key message:** One table alone is not enough — teammates will combine them in Tasks 2–4.
+**Join keys (bullet list under the diagram):**
+
+- `market_id` → markets, orders, trades, snapshots  
+- `trader_id` → traders, orders, sessions, transfers, features  
+- `order_id` → orders ↔ trades (buy leg / sell leg)
+
+**Key message:** One table alone is not enough — teammates combine layers in Tasks 2–4.
+
+<details>
+<summary>Optional: Mermaid version (export at mermaid.live → PNG for PowerPoint)</summary>
+
+```mermaid
+flowchart TB
+  subgraph marketLayer [Market layer]
+    markets[markets]
+    snapshots[market_daily_snapshots]
+  end
+  subgraph execLayer [Execution layer]
+    orders[orders]
+    trades[trades]
+  end
+  subgraph accountLayer [Account layer]
+    traders[traders]
+    sessions[sessions]
+    transfers[transfers]
+    features[account_daily_features]
+  end
+  markets -->|market_id| orders
+  markets -->|market_id| trades
+  markets -->|market_id| snapshots
+  orders -->|order_id| trades
+  orders -->|trader_id| traders
+  trades -->|buyer/seller trader_id| traders
+  traders --> sessions
+  traders --> transfers
+  traders --> features
+```
+
+</details>
 
 ---
 
@@ -70,13 +140,13 @@ order_id   →  links orders ↔ trades (buy side / sell side)
 3. **Next tasks (team):** suspicious markets (Task 2), account clusters (Task 3), risk score (Task 4)
 
 **Script:** `task1_data_understanding.py`  
-**Outputs:** `output/task1/` folder (CSV + summary text)
+**Outputs:** `output/task1/` folder (CSV + summary + `task1_join_diagram.png`)
 
 ---
 
 ## Speaker notes (30 sec each)
 
 - **Slide 2:** “We’re the foundation — if the data is wrong, everything else is wrong.”
-- **Slide 4:** Draw arrows on whiteboard: markets → orders → trades, traders → sessions.
+- **Slide 4:** Walk through the diagram top-down: Market → Execution → Account; point at `market_id` and `trader_id` arrows.
 - **Slide 5:** Emphasize 0 orphans for market_id and trader_id — data is trustworthy.
 - **Slide 7:** Hand off to teammate doing market patterns: “Use market_id to join snapshots and orders.”

@@ -1,0 +1,10 @@
+TASK 1 SUMMARY
+==============
+- Loaded 8 tables (48 markets, 360 traders, 8000 orders, 7977 trades, ...)
+- All primary keys are unique (no duplicate IDs)
+- market_id & trader_id: 0 broken links; every trade links to ≥1 order (buy OR sell leg)
+- All time-order rules pass (created before updated, etc.)
+- Some columns have many missing values BY DESIGN (e.g. cancel_reason only for canceled orders)
+- Fraud cannot be seen in one table alone — we must JOIN market + account + order data in later tasks
+
+Outputs saved in: output/task1/

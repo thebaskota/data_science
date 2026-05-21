@@ -1,0 +1,18 @@
+{
+  "cancel_to_order_ratio": 0.15,
+  "fill_ratio_mean_inv": 0.15,
+  "top_counterparty_trade_share": 0.2,
+  "shared_infra_score": 0.2,
+  "api_order_share": 0.1,
+  "self_trade_count": 0.15,
+  "vpn_tor": 0.05,
+  "rationale": {
+    "cancel_to_order_ratio": "Spoofing: many cancels vs orders",
+    "fill_ratio_mean_inv": "Low execution with high activity",
+    "top_counterparty_trade_share": "Collusion: one counterparty dominates",
+    "shared_infra_score": "Multi-account same device/fp/withdraw",
+    "api_order_share": "Automated manipulation patterns",
+    "self_trade_count": "Direct wash/self-trade flag",
+    "vpn_tor": "Obfuscation (weak alone, supports other signals)"
+  }
+}

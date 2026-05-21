@@ -1,0 +1,11 @@
+market_id,question,suspicion_score
+mkt_027,Will synthetic event 27 in politics resolve YES by 2026-01-31?,1.9685986501920223
+mkt_018,Will synthetic event 18 in entertainment resolve YES by 2026-02-12?,1.137424623551128
+mkt_021,Will synthetic event 21 in tech resolve YES by 2026-02-06?,1.104312838008278
+mkt_025,Will synthetic event 25 in tech resolve YES by 2026-03-08?,0.6563657734531324
+mkt_038,Will synthetic event 38 in politics resolve YES by 2026-02-28?,0.6448197220602859
+mkt_034,Will synthetic event 34 in sports resolve YES by 2026-02-14?,0.5114264964710783
+mkt_017,Will synthetic event 17 in politics resolve YES by 2026-03-11?,0.4149402625319277
+mkt_002,Will synthetic event 2 in culture resolve YES by 2026-01-21?,0.3218944564834441
+mkt_012,Will synthetic event 12 in politics resolve YES by 2026-02-08?,0.3154118397773638
+mkt_001,Will synthetic event 1 in tech resolve YES by 2026-02-04?,0.3078830815266915

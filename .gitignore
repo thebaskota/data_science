@@ -1,7 +1,9 @@
 .venv/
+.mplconfig/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 .DS_Store
 *.egg-info/
 .pytest_cache/
+.cursor/

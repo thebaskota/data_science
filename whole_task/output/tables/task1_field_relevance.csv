@@ -1,0 +1,11 @@
+table,fields,relevance
+markets,"close_time, liquidity_usdc_seeded",high
+markets,"weather_temp_c, thumbnail_theme",irrelevant
+orders,"status, cancel_reason, is_api_order, cancel_count_15m",high
+orders,coupon_banner_seen,irrelevant
+trades,"is_self_trade_flag, signed_price_change_bps",high
+sessions,"device_fingerprint_hash, ip_address, vpn_detected",high
+sessions,"battery_pct_at_open, avg_scroll_depth_pct",irrelevant
+transfers,"source_or_destination_address, aml_screen_hit",high
+features,"fill_ratio_mean, top_counterparty_trade_share, self_trade_count",high
+snapshots,"news_sentiment_score, social_mentions_1h",medium (counter-hypothesis)

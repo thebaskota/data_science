@@ -1,0 +1,7 @@
+table,column,missing_pct
+markets,internal_note_stub,54.2
+traders,builder_code_seen,58.6
+orders,cancel_reason,69.0
+orders,builder_code,26.6
+transfers,card_bin_country,86.5
+transfers,deposit_campaign_code,55.8

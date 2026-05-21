@@ -1,0 +1,9 @@
+table,key,rows,duplicates,is_unique
+markets,market_id,48,0,True
+traders,trader_id,360,0,True
+sessions,session_id,2500,0,True
+orders,order_id,8000,0,True
+trades,trade_id,7977,0,True
+transfers,transfer_id,1800,0,True
+features,trader_id + date,12507,0,True
+snapshots,market_id + trade_date,1258,0,True

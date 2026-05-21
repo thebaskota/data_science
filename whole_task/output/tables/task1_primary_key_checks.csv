@@ -1,0 +1,9 @@
+table,rows,pk_column,pk_unique,pk_duplicates
+markets,48,market_id,True,0
+traders,360,trader_id,True,0
+sessions,2500,session_id,True,0
+orders,8000,order_id,True,0
+trades,7977,trade_id,True,0
+transfers,1800,transfer_id,True,0
+features,12507,trader_id+date,True,0
+snapshots,1258,market_id+trade_date,True,0

@@ -1,0 +1,9 @@
+table,rows,columns
+markets,48,24
+traders,360,22
+sessions,2500,24
+orders,8000,34
+trades,7977,27
+transfers,1800,19
+snapshots,1258,17
+features,12507,28

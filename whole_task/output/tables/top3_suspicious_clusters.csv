@@ -1,0 +1,2 @@
+cluster_id,size,density,internal_trade_share,internal_trade_volume_usdc,members,avg_max_counterparty_share,avg_max_shared_device,total_self_trades,suspicion_score,narrative
+0,6,1.0,0.2037,1516.92,"tr_0023,tr_0057,tr_0111,tr_0184,tr_0265,tr_0304",1.0,1.0,2,0.0,"Cluster of 6 accounts linked by shared device/IP/withdrawal infra; internal trade share 20.4%, density 1.00, 2 self-trade events."

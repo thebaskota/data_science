@@ -1,0 +1,16 @@
+{
+  "markets": {
+    "internal_note_stub": 0.5417
+  },
+  "traders": {
+    "builder_code_seen": 0.5861
+  },
+  "orders": {
+    "cancel_reason": 0.6899,
+    "builder_code": 0.266
+  },
+  "transfers": {
+    "card_bin_country": 0.865,
+    "deposit_campaign_code": 0.5583
+  }
+}

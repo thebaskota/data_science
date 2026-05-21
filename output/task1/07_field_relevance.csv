@@ -1,0 +1,11 @@
+table,example_fields,relevance,why
+markets,"close_time, liquidity_usdc_seeded",HIGH,Timing & manipulation context
+markets,"weather_temp_c, thumbnail_theme",IRRELEVANT,Intentional noise
+orders,"status, cancel_reason, is_api_order",HIGH,Spoofing / automation
+orders,coupon_banner_seen,IRRELEVANT,UI noise
+trades,"is_self_trade_flag, signed_price_change_bps",HIGH,Collusion / price impact
+sessions,"device_fingerprint_hash, ip_address, vpn_detected",HIGH,Multi-account links
+sessions,battery_pct_at_open,IRRELEVANT,Product noise
+transfers,"source_or_destination_address, aml_screen_hit",HIGH,Cashout clustering
+features,"fill_ratio_mean, top_counterparty_trade_share",HIGH,Pre-built risk signals
+snapshots,"news_sentiment_score, unique_buyers",HIGH/MEDIUM,Market suspicion + counter-evidence

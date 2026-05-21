@@ -1,0 +1,21 @@
+DATA MODEL — How tables connect
+================================
+
+Three layers:
+  MARKET:     markets  +  market_daily_snapshots
+  ACCOUNT:    traders  +  sessions  +  transfers  +  account_daily_features
+  EXECUTION:  orders   +  trades
+
+Join keys:
+  market_id  → links markets, orders, trades, snapshots
+  trader_id  → links traders, orders, sessions, transfers, features
+  order_id   → links orders to trades (buy_order_id, sell_order_id)
+  trade_id   → unique per trade
+  session_id → unique per session
+  transfer_id → unique per transfer
+
+Example joins for later fraud analysis:
+  orders  + markets   ON market_id
+  trades  + markets   ON market_id
+  trades  + traders   ON buyer_trader_id / seller_trader_id
+  sessions + traders  ON trader_id

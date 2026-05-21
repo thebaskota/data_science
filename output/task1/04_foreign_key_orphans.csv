@@ -1,0 +1,9 @@
+child_table,foreign_key,parent_table,orphan_count
+orders,market_id,markets,0
+orders,trader_id,traders,0
+trades,market_id,markets,0
+trades,buyer_trader_id,traders,0
+trades,seller_trader_id,traders,0
+trades,buy_order_id → BUY orders,orders,3470
+trades,sell_order_id → SELL orders,orders,4507
+trades,at least one order link,orders,0

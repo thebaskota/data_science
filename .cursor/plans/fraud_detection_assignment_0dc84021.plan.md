@@ -4,22 +4,22 @@ overview: "Your English translation is substantively accurate and complete. The 
 todos:
   - id: setup-env
     content: Create Python env; load 8 CSVs from polymarket_fraud_seminar_student (1)/
-    status: pending
+    status: completed
   - id: task1-qc
     content: "Task 1: join plan, uniqueness/FK checks, datetime parsing, field relevance tags"
-    status: pending
+    status: completed
   - id: task2-markets
     content: "Task 2: market suspicion metrics, plots, top-10 markets with justification"
-    status: pending
+    status: completed
   - id: task3-clusters
     content: "Task 3: account network from shared device/IP/withdraw addr; top-3 clusters"
-    status: pending
+    status: completed
   - id: task4-score
     content: "Task 4: standardized weighted account (+ optional market) fraud score"
-    status: pending
+    status: completed
   - id: task5-deliver
     content: "Task 5: counter-hypotheses, 1-page summary, 2-4 figures, top-case tables"
-    status: pending
+    status: completed
 isProject: false
 ---
 

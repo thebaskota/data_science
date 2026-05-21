@@ -1,0 +1,361 @@
+trader_id,wallet_address,signup_ts,home_country,time_zone,preferred_language,kyc_tier,wallet_provider,referral_source,vip_tier,maker_fee_bps,taker_fee_bps,builder_code_seen,risk_country_flag,marketing_opt_in,ui_theme,favorite_category,avg_session_length_min_prior_30d,support_tickets_prior_90d,screen_name_style,avatar_color,price_alerts_enabled
+tr_0001,0x12691ef1f59f1db4b94ca679674c147a2101af6a,2024-12-09,GB,UTC+0,de,enhanced,Embedded,x,none,0,15,,False,False,system,Politics,14.18,0,wallet-only,gray,False
+tr_0002,0x2911ccc3a745d8f06e656708d4b72b71aaa97d86,2025-04-11,US,UTC-8,es,enhanced,Coinbase Wallet,referral_code,none,4,15,builder_gamma,False,False,dark,Tech,20.5,1,real-name,green,False
+tr_0003,0x7f95f500d5b0e51555a3a9e145057d9e4b9f669c,2024-06-18,ES,UTC-8,pl,none,Embedded,organic,silver,0,20,,False,True,system,Culture,12.92,0,nickname,green,False
+tr_0004,0x1a58c59567dcd840f63b1d151c73ca4c683697c2,2025-03-24,FR,UTC+8,fr,basic,Phantom,organic,none,2,5,,False,True,light,Crypto,16.67,0,wallet-only,blue,True
+tr_0005,0x0bd93fb7e89c69a8522a465d136da496133d786a,2024-11-03,US,UTC-8,fr,basic,Coinbase Wallet,telegram,none,2,0,,False,True,light,Entertainment,1.0,0,wallet-only,purple,False
+tr_0006,0x0224ca2df70d19de65a1fb21be8dfe4e31c596b3,2025-05-14,PL,UTC+0,es,enhanced,Phantom,podcast,gold,0,5,builder_gamma,False,True,dark,Politics,1.0,1,nickname,blue,False
+tr_0007,0x622f74975f56afee5bd0f9dafbc384f5c1dd6e6f,2025-02-03,ES,UTC-5,de,enhanced,WalletConnect,friend,none,2,15,,False,False,dark,Culture,26.42,1,nickname,purple,True
+tr_0008,0x41d33eeaec60ddf76dbeddb859db700aac26a512,2024-10-10,US,UTC-5,en,basic,Rabby,builder_app,silver,6,10,builder_alpha,False,False,light,Macro,9.77,3,wallet-only,orange,False
+tr_0009,0x8fdcdac57b4adc362efe3feaaef3b266415f1b6e,2025-03-18,US,UTC+8,de,none,MetaMask,x,none,8,5,builder_gamma,False,False,light,Crypto,18.58,0,wallet-only,black,False
+tr_0010,0x7a1b3dc472d9f4a662449e5a7025babbb41053ef,2024-03-13,DE,UTC+0,pl,basic,Rabby,podcast,platinum,6,15,,False,False,system,Culture,3.86,0,real-name,orange,True
+tr_0011,0xff9b049465f8948ee2582102ddbe4e9c45e5fc2d,2024-09-12,CA,UTC+0,es,basic,Embedded,x,none,4,0,builder_gamma,True,False,system,Politics,18.47,0,nickname,blue,True
+tr_0012,0xac02304b6fe05b77dd11d2284e99f8961cae0aa6,2025-01-04,CH,UTC+1,es,enhanced,Coinbase Wallet,friend,none,4,10,,True,False,dark,Macro,17.15,1,real-name,orange,True
+tr_0013,0x9fd21da7f90faf5bbf930a501f662fd1d2c4ca17,2024-07-11,AE,UTC+0,fr,basic,WalletConnect,x,gold,2,15,,False,True,light,Entertainment,12.85,1,wallet-only,green,False
+tr_0014,0x6c4a2ad87e796cc9660573a27a846e722ed84010,2024-08-15,US,UTC+8,de,none,MetaMask,newsletter,none,4,0,builder_alpha,False,False,light,Weather,1.0,0,real-name,gray,False
+tr_0015,0x161a944181a2261e497a94fd22b9d180127bdf97,2024-04-13,US,UTC+1,de,basic,Coinbase Wallet,referral_code,none,4,15,builder_gamma,True,True,system,Crypto,11.97,0,real-name,black,False
+tr_0016,0x9f5ab642010fd3aa6ac3477022bf7d939d00abfd,2025-02-13,US,UTC+0,fr,enhanced,Rabby,referral_code,none,8,15,builder_alpha,False,True,system,Sports,12.71,0,real-name,purple,True
+tr_0017,0xb9847799ad7b8651e677f5b043533e59da24bfda,2024-02-14,ES,UTC-8,pl,enhanced,Phantom,referral_code,silver,4,10,builder_beta,False,True,dark,Crypto,12.83,1,wallet-only,purple,True
+tr_0018,0xbccd94ba23916f4300e52de0169134550e42b8ab,2025-05-30,US,UTC-8,de,basic,MetaMask,telegram,silver,0,15,builder_beta,False,False,dark,Culture,5.61,0,wallet-only,orange,True
+tr_0019,0xe77d119cfd01ade2478b1a52d76c3c5815c5a2c6,2024-04-08,AE,UTC-8,es,none,MetaMask,podcast,none,6,10,builder_beta,False,True,dark,Macro,10.06,0,wallet-only,green,True
+tr_0020,0x3c667dc5020cf15f20caae0aba846a84be048eb7,2024-06-05,AE,UTC+0,en,basic,Phantom,organic,silver,8,10,,False,True,light,Politics,15.64,0,wallet-only,gray,True
+tr_0021,0x38cabec63405bb2f4188c20c93cbf105a50a14b7,2024-03-19,US,UTC-8,de,enhanced,Coinbase Wallet,friend,none,6,5,builder_beta,False,False,light,Macro,14.46,0,nickname,blue,False
+tr_0022,0xfcf9ea8954cbab8359d51bd10e77589864767e7f,2025-10-22,CA,UTC+8,en,basic,MetaMask,friend,none,0,15,builder_beta,False,True,dark,Weather,21.67,0,nickname,gray,False
+tr_0023,0xd22b2bd137bf5f9619025f47c290ee3d715d699e,2025-05-04,US,UTC+0,fr,basic,MetaMask,builder_app,silver,2,15,builder_alpha,False,False,dark,Macro,19.13,1,real-name,black,False
+tr_0024,0xc7b9c8777d5ca6368febadb9cb8183990937e1e2,2024-01-21,US,UTC+0,pl,enhanced,Rabby,referral_code,silver,2,5,builder_gamma,False,False,light,Entertainment,5.1,0,nickname,gray,True
+tr_0025,0x0c3be7c960d066d54112241462950065656d13c9,2025-01-27,US,UTC-5,pl,basic,WalletConnect,podcast,none,6,15,,False,False,system,Crypto,14.92,0,nickname,green,True
+tr_0026,0x7c61076763e4fa38c461a3f5fc86e707d4f0e79d,2024-05-02,US,UTC-5,en,enhanced,Coinbase Wallet,friend,none,6,10,builder_alpha,False,True,dark,Politics,25.54,1,wallet-only,gray,False
+tr_0027,0x65a980b946128469f5a54c73f5790ba07ea6ebc8,2024-03-29,US,UTC-5,en,basic,Rabby,organic,silver,2,10,,False,False,dark,Crypto,18.21,0,real-name,black,True
+tr_0028,0xca10daa5dd52cb07e7304e5194b3754eb33d6d97,2024-08-13,US,UTC-5,en,basic,MetaMask,discord,silver,6,15,,False,True,dark,Politics,15.67,0,nickname,black,False
+tr_0029,0x8a9a91214938c3afb8487faf0f6f4a75ce346703,2024-03-12,US,UTC-8,pl,basic,Phantom,telegram,platinum,2,10,,False,False,dark,Crypto,16.33,0,real-name,black,False
+tr_0030,0x190bf61324a17c9a5413505cfc9ca91005d12e74,2024-11-08,US,UTC+1,fr,basic,Rabby,discord,gold,2,10,builder_gamma,False,True,dark,Sports,14.11,0,nickname,purple,False
+tr_0031,0xa1a8461c39a06ce95fc753191c39a46b73c046fc,2025-11-02,US,UTC+1,de,enhanced,MetaMask,referral_code,none,4,15,,False,True,system,Culture,16.55,1,nickname,black,False
+tr_0032,0x4ec245509a08dd633ec5abf959f9627c0303393b,2025-10-10,GB,UTC-8,pl,none,MetaMask,referral_code,none,0,15,builder_alpha,False,True,light,Sports,12.42,1,real-name,black,False
+tr_0033,0xf5b32f5101439c0032eb5820de0a6c1e43cafffe,2024-04-27,US,UTC+8,es,enhanced,MetaMask,x,none,8,20,,False,False,system,Tech,12.37,0,wallet-only,blue,True
+tr_0034,0xe12ec3659f30938c50cddfe317a18ca87755bb74,2024-12-29,GB,UTC+8,es,basic,Phantom,referral_code,none,2,5,,False,True,light,Crypto,15.96,1,real-name,green,False
+tr_0035,0x6e9033d64e9e582175979676c5623a51d8ace110,2025-02-18,US,UTC+0,es,basic,Embedded,builder_app,none,4,10,builder_alpha,False,False,dark,Macro,1.0,0,nickname,black,False
+tr_0036,0x3354da4bffcbe04dc669a78c263b78ccb7c53cb3,2025-07-16,AE,UTC-8,de,basic,MetaMask,referral_code,none,4,10,builder_gamma,False,True,dark,Culture,28.17,0,wallet-only,gray,False
+tr_0037,0x78592f0cd56a6c850ce2f5a99df3683197e1180b,2024-12-17,US,UTC-8,de,enhanced,Phantom,referral_code,none,6,5,,False,True,system,Tech,10.22,0,real-name,blue,True
+tr_0038,0x721f43a1082d621871fd236b79f98a40216c8ee7,2025-05-31,US,UTC+1,fr,enhanced,Coinbase Wallet,x,silver,6,15,,True,True,dark,Culture,11.83,1,nickname,green,True
+tr_0039,0x9b4e7bb49c23eb7e296f3d4a4ebb37f8f11c5748,2025-07-22,SG,UTC-8,es,basic,Rabby,builder_app,none,2,5,,False,True,system,Sports,7.3,1,wallet-only,blue,False
+tr_0040,0x71bb6bd601e5b7183f2dd2014861ca2530a3bdca,2025-06-05,US,UTC-8,de,enhanced,WalletConnect,builder_app,none,0,5,builder_gamma,False,False,light,Tech,13.79,0,nickname,green,False
+tr_0041,0xbe6400cce5316f53a3ecd226158338f135265671,2024-12-27,FR,UTC-8,es,enhanced,Phantom,x,none,2,10,,True,False,light,Weather,10.53,0,nickname,purple,True
+tr_0042,0xda51349f18fd2f9fbafb5ae5d75996a39f39e4bc,2025-08-21,US,UTC+0,pl,enhanced,Coinbase Wallet,referral_code,gold,2,5,,False,True,light,Tech,8.92,1,nickname,orange,False
+tr_0043,0x9054230e9fb54ac8fa40d538ea3ab96570d13a23,2024-01-31,GB,UTC-5,de,basic,Coinbase Wallet,podcast,platinum,4,15,,False,False,system,Weather,11.26,1,nickname,green,True
+tr_0044,0x19de31b4b32347a4c1f6278bcdc06dce92b47769,2024-06-23,US,UTC+0,fr,basic,WalletConnect,referral_code,none,4,15,builder_gamma,False,True,dark,Sports,2.01,1,nickname,purple,True
+tr_0045,0x1272308b7eff57a960e69364eb87bbaeb30daaba,2025-10-03,PL,UTC+0,es,none,Coinbase Wallet,organic,none,2,5,builder_gamma,False,True,system,Weather,17.44,0,real-name,orange,False
+tr_0046,0x47a49fd0cae69e836d44fa646eb1ac52be64fd01,2024-06-01,US,UTC-5,de,none,Coinbase Wallet,friend,silver,0,10,,False,True,light,Weather,3.73,1,nickname,orange,False
+tr_0047,0xb8ab25b32f7d202c4e6a9d2464597a10c09f1809,2025-07-11,US,UTC+8,es,enhanced,Coinbase Wallet,x,none,0,10,,False,False,system,Macro,13.47,1,nickname,green,True
+tr_0048,0xfce7565efdfa605517bbe29d4bd59a763ffd050c,2024-10-06,FR,UTC-8,fr,enhanced,Phantom,telegram,none,0,0,builder_beta,False,True,dark,Sports,14.17,0,nickname,black,False
+tr_0049,0x5796916eefdeb43289d82c4a8d271a33ca16b2ee,2024-08-03,CA,UTC+1,en,enhanced,Phantom,friend,gold,2,10,builder_gamma,False,True,dark,Culture,1.0,0,nickname,purple,False
+tr_0050,0xc347e128b1bdec9a6bb6a8dc3111beb15df9008d,2025-07-17,US,UTC-5,es,basic,Phantom,organic,none,2,5,builder_beta,False,False,system,Culture,12.98,1,nickname,purple,False
+tr_0051,0xf55ac8936872fd7792acb94f1fb7d7b6f5d3bcb0,2025-04-24,US,UTC-8,en,basic,Rabby,friend,silver,6,10,,False,False,system,Politics,19.2,1,wallet-only,purple,False
+tr_0052,0xd276fadf85afc684b3d62c9cdb722b423bb0b9af,2024-07-23,US,UTC-8,en,enhanced,Rabby,x,none,2,10,,False,True,dark,Entertainment,6.89,1,nickname,orange,True
+tr_0053,0x2f6de1f20fa9fa6037bfa6bcacda4a5117a80994,2025-11-02,SG,UTC+1,en,none,Embedded,discord,none,2,10,,False,True,light,Culture,9.31,0,nickname,purple,False
+tr_0054,0xbc27a6911ec2d088c789bc1cfe2928c12328d0f8,2025-06-10,IE,UTC-5,fr,basic,Rabby,discord,none,0,5,builder_beta,False,True,light,Macro,13.35,2,nickname,blue,True
+tr_0055,0x586f04f8ca79b8f5831d334df93529146e6146b8,2024-12-03,FR,UTC+1,fr,none,Embedded,x,gold,6,10,builder_beta,False,True,system,Entertainment,15.52,1,nickname,blue,False
+tr_0056,0x1bfb35ad962f60911181a554d306f61e2b4d78bd,2025-05-17,DE,UTC+8,fr,basic,WalletConnect,builder_app,gold,2,15,builder_beta,False,True,system,Macro,14.72,4,nickname,green,False
+tr_0057,0x89e2f65bf89d7208226b0bfb39b2fc846fed4df6,2025-11-02,US,UTC-8,fr,basic,MetaMask,builder_app,silver,2,20,builder_alpha,False,False,light,Weather,1.0,1,real-name,gray,False
+tr_0058,0x511bf20b87df68b78feb69ebbbb3bfde899fae83,2025-02-02,SG,UTC+1,de,basic,WalletConnect,telegram,none,6,0,,False,True,system,Politics,1.0,2,wallet-only,purple,False
+tr_0059,0x1d8f6651e38c1443b934ead079759550e2517182,2025-03-07,US,UTC+0,es,none,Coinbase Wallet,discord,silver,4,15,builder_gamma,False,True,light,Sports,13.82,0,wallet-only,black,True
+tr_0060,0x172a36462c17d2565d3306be237a468cb5ce8ed6,2025-11-11,GB,UTC+1,en,enhanced,MetaMask,x,gold,2,5,builder_gamma,False,False,light,Politics,7.36,1,wallet-only,blue,True
+tr_0061,0x11028c3a5fb647c3283cdf3d3bcb82f9a320fe69,2024-07-19,CA,UTC+8,en,enhanced,WalletConnect,newsletter,none,6,10,builder_alpha,False,True,light,Macro,6.26,0,nickname,blue,False
+tr_0062,0x1064a3578a444565000b37e12f54108d5b5c85a3,2024-06-03,US,UTC-8,pl,enhanced,Embedded,builder_app,silver,2,5,,False,True,light,Crypto,8.04,0,nickname,green,True
+tr_0063,0x6e2b19ea3be185bf3b0384edefe7be16e809b209,2025-02-09,FR,UTC+0,pl,enhanced,MetaMask,podcast,none,0,10,builder_alpha,False,False,system,Macro,5.58,1,real-name,gray,False
+tr_0064,0xcbb6adf2c6c64223bec7b843b820302ee4ca3d80,2025-11-26,DE,UTC+0,fr,basic,Rabby,friend,none,4,10,builder_gamma,False,False,dark,Tech,1.0,1,nickname,orange,True
+tr_0065,0x5951b8b6950dd3f2f8fcc1b6ada8d349cc23b5e1,2024-12-23,US,UTC+8,fr,none,Coinbase Wallet,podcast,none,6,15,,False,True,system,Macro,8.06,0,nickname,green,False
+tr_0066,0x22d37ba02269113ef18bc960dca0312a0ff1b5b3,2025-03-17,US,UTC+0,de,basic,Embedded,newsletter,none,6,15,builder_gamma,True,False,system,Crypto,11.95,0,nickname,green,True
+tr_0067,0x7972520ba1d148d2e062a3e6ed1211f591eee928,2025-12-16,DE,UTC-8,de,enhanced,WalletConnect,discord,none,4,15,builder_gamma,False,True,light,Culture,5.87,2,wallet-only,purple,False
+tr_0068,0x9a2a4d51eaecb10e2a56bc719f41f2656b6c5ca3,2025-10-26,DE,UTC+8,fr,basic,WalletConnect,friend,none,2,5,builder_beta,False,True,system,Sports,1.0,1,wallet-only,blue,False
+tr_0069,0x6788d6969bbb30f08fe05ddd42dfe3d02fb60f5b,2025-10-04,NL,UTC-5,pl,none,Coinbase Wallet,organic,none,0,15,,False,True,light,Sports,4.41,0,nickname,gray,True
+tr_0070,0xa1dd05119d22bbb465cb42e0c80dae8de8b62f8f,2025-09-24,US,UTC-5,fr,basic,Phantom,friend,none,4,15,,False,True,system,Sports,17.11,0,real-name,orange,False
+tr_0071,0x23932b8dd75ad2ca3119d04819c48a04f99c05f0,2024-07-20,US,UTC-5,fr,none,Embedded,newsletter,none,4,15,,False,True,light,Politics,6.52,1,wallet-only,blue,False
+tr_0072,0x5463cbfb16b1c2969d427e1becac2f8bae5c55d6,2024-11-09,US,UTC+8,en,enhanced,Coinbase Wallet,podcast,none,8,0,builder_gamma,False,True,dark,Politics,13.03,3,real-name,blue,True
+tr_0073,0xec63912a7c2d8fc115e24512c474ea2190d6de25,2025-11-10,FR,UTC+0,fr,basic,Rabby,telegram,silver,0,15,,False,True,system,Tech,3.65,2,real-name,purple,False
+tr_0074,0xdf5a84ea9ab3d0d42616717ae71beec355f7b740,2024-07-23,IE,UTC+8,fr,basic,Embedded,referral_code,none,6,5,builder_gamma,False,True,light,Crypto,3.4,1,nickname,blue,True
+tr_0075,0x27a5096e5670dfa4a1164bd8a4d1e5c2567b2b5b,2024-04-23,US,UTC+1,fr,enhanced,Rabby,x,none,6,10,,False,True,system,Culture,10.0,0,nickname,black,False
+tr_0076,0x60c91a95ffbb5272d1f6807d27f13f68265ff90d,2025-06-05,US,UTC-5,en,none,Embedded,telegram,none,4,10,,False,False,dark,Politics,23.88,0,wallet-only,green,False
+tr_0077,0x0e8dba76588c1262986db649edfc1a967ce17904,2025-03-04,US,UTC-5,de,basic,Rabby,friend,none,4,10,builder_beta,False,True,system,Crypto,6.36,0,wallet-only,gray,True
+tr_0078,0x6376371fe6dbb0534e4dc63e6025dd95ff3f3adc,2025-05-06,FR,UTC-5,de,basic,Embedded,friend,none,8,20,builder_beta,False,True,system,Tech,13.76,0,wallet-only,black,False
+tr_0079,0x92af2e861c8acda48f316a90be16b27a53e483cc,2025-10-28,ES,UTC+8,fr,basic,Coinbase Wallet,x,none,0,0,builder_gamma,True,False,system,Tech,7.38,0,wallet-only,black,False
+tr_0080,0xca4eaa917914e175d6701f1a65ec202990ff7982,2024-01-22,US,UTC-8,pl,enhanced,WalletConnect,x,none,6,10,,False,True,light,Macro,16.62,0,nickname,orange,False
+tr_0081,0xbe30082d1353bf47f584b78632ae469c4cf7e6bd,2024-08-02,US,UTC+0,fr,basic,Embedded,telegram,none,6,10,,False,True,light,Tech,15.49,1,real-name,blue,False
+tr_0082,0x99695a120894daf5025c51a5c15057ce8698149e,2024-11-25,US,UTC-5,es,none,Embedded,newsletter,gold,4,15,builder_beta,False,True,dark,Crypto,13.91,0,real-name,green,False
+tr_0083,0xd1e6c553c7f6125694adfe4d6ee0a11cb4c68596,2025-02-06,US,UTC+0,en,basic,Phantom,newsletter,none,2,5,,False,False,light,Macro,11.76,0,real-name,orange,False
+tr_0084,0xb7df15900015b623e5efed4c1f159c42272dcef6,2025-05-04,US,UTC-5,de,enhanced,Coinbase Wallet,podcast,gold,4,10,builder_gamma,False,True,light,Weather,16.41,1,wallet-only,gray,True
+tr_0085,0x7189af5b34418dab31f003d31398dc4728e35fd8,2024-06-28,CH,UTC+1,fr,enhanced,MetaMask,telegram,none,4,0,builder_beta,False,True,system,Tech,4.67,0,real-name,purple,False
+tr_0086,0xc3424da2eb3e20a74e16288041ab6469876aaf30,2024-04-27,US,UTC-5,fr,basic,Coinbase Wallet,builder_app,silver,2,15,,False,False,system,Tech,6.34,0,nickname,green,False
+tr_0087,0x041139b61be43c549b18b74e3512e2075241ad9f,2024-06-26,GB,UTC+1,fr,enhanced,Rabby,referral_code,gold,6,20,,False,False,system,Tech,17.92,1,wallet-only,purple,True
+tr_0088,0x9731d9fd82214b7bf47505becde91ab0fda273bf,2024-02-24,GB,UTC-5,de,none,Embedded,discord,silver,0,10,builder_alpha,False,True,dark,Politics,4.47,1,wallet-only,purple,False
+tr_0089,0x5b3fafeae7f84ae66f4085967fc4f7a72f9a44c0,2025-04-30,US,UTC+0,fr,none,MetaMask,friend,none,6,10,builder_gamma,False,False,system,Politics,1.0,1,wallet-only,orange,False
+tr_0090,0x049046a0454dac214f391375ca6f14449a59a328,2024-07-17,US,UTC+8,fr,basic,Phantom,telegram,none,0,10,builder_alpha,False,True,dark,Politics,4.98,2,real-name,purple,False
+tr_0091,0x419a86e6275eb766608f6c94382894c660cd700d,2024-04-14,US,UTC+8,pl,basic,MetaMask,telegram,none,2,5,,False,False,light,Crypto,8.22,1,wallet-only,green,True
+tr_0092,0xa514750bab032b73ad44f07b1091137d7016fdd8,2025-05-24,CH,UTC+8,pl,none,Embedded,friend,none,8,10,,False,True,light,Macro,12.08,0,wallet-only,gray,True
+tr_0093,0xdad96a2da2b874af7a6b16607904ae90ef7b4f5d,2024-10-24,FR,UTC+0,fr,enhanced,Embedded,telegram,none,4,5,builder_gamma,False,True,dark,Sports,4.46,0,real-name,gray,False
+tr_0094,0x85b61a5b5bc4c46ea67a9ec825f5960d211e7cfc,2024-08-18,PL,UTC-5,es,basic,Embedded,newsletter,platinum,6,10,,False,False,system,Politics,1.0,0,real-name,blue,True
+tr_0095,0xb3e2ec6191d1c9de5b6f9347432dc39aa3ce5681,2024-01-21,CA,UTC-8,de,basic,Rabby,builder_app,none,4,10,,False,True,dark,Culture,6.51,0,wallet-only,purple,False
+tr_0096,0x2bea7d97598216611c413953fe4b1df19de860b1,2025-09-09,US,UTC+1,en,basic,Embedded,podcast,none,0,10,builder_gamma,False,False,dark,Culture,3.05,0,wallet-only,green,False
+tr_0097,0x7e40545c28beae31febc0ff9918f4008a64df00c,2024-05-11,US,UTC+8,de,none,Embedded,friend,none,6,10,,False,False,light,Macro,19.99,1,wallet-only,gray,False
+tr_0098,0xc8dab80cb6627ef5360393bec9f0bd12205a3497,2024-01-19,AU,UTC-8,en,none,MetaMask,builder_app,silver,2,10,,False,True,system,Sports,12.09,1,nickname,gray,False
+tr_0099,0x11487b5e3bfc4a84b80eb9432f3b35d2fba71704,2025-05-30,PL,UTC+8,en,enhanced,WalletConnect,friend,none,2,10,,False,False,system,Crypto,12.08,0,wallet-only,blue,True
+tr_0100,0x6d1497d60326048509eeec9c5d66bb016badf799,2025-07-25,US,UTC+0,fr,enhanced,Embedded,organic,none,0,0,,False,True,light,Politics,19.35,0,real-name,green,True
+tr_0101,0x826be20cf1385695acc919542777f7d30f49512c,2024-05-02,US,UTC+1,de,enhanced,WalletConnect,referral_code,none,0,10,,False,True,system,Weather,13.38,1,nickname,green,False
+tr_0102,0x4d2a29010ad90b0b44ad5b95178355d6ae25c56a,2024-04-12,CH,UTC+1,fr,enhanced,Embedded,telegram,none,4,5,,False,True,light,Politics,17.52,0,wallet-only,purple,True
+tr_0103,0x7f920ee09c8c8953d0b6f11e38986bd807874d43,2024-05-07,CH,UTC-5,pl,none,Embedded,organic,none,6,15,builder_alpha,False,True,dark,Crypto,16.79,1,wallet-only,green,False
+tr_0104,0x3c57b13be558ea9769d28c69244516f9acee0148,2024-09-02,AE,UTC+0,fr,basic,MetaMask,friend,none,4,0,,False,True,system,Tech,8.88,1,wallet-only,gray,True
+tr_0105,0xeb206bf2dee568b1ee99f0b5767d4722cee1e95a,2024-02-19,FR,UTC+8,es,basic,MetaMask,builder_app,silver,4,5,,False,False,light,Entertainment,19.77,1,wallet-only,orange,False
+tr_0106,0x6789f1459e9d65522dbf389914147e4efcea23dc,2024-05-07,SG,UTC-8,de,basic,WalletConnect,newsletter,none,2,10,,True,True,system,Macro,1.34,0,wallet-only,gray,False
+tr_0107,0x0ef8c0d03f9b8d41bd764dfb151cb584a8cb5e6e,2024-05-08,AU,UTC+0,fr,basic,MetaMask,referral_code,none,0,20,builder_gamma,False,True,system,Tech,17.18,1,wallet-only,blue,True
+tr_0108,0xc5dae0a026fa42db43efdb018326469a7a24347c,2024-06-22,AU,UTC-8,es,none,Coinbase Wallet,podcast,gold,4,10,builder_gamma,False,False,system,Politics,1.0,0,wallet-only,black,False
+tr_0109,0x65711ec4f5a1751bbc7c76348ec0c45676e4b5d4,2025-12-08,GB,UTC+1,pl,basic,Coinbase Wallet,discord,none,4,20,,False,True,light,Culture,5.65,1,nickname,green,True
+tr_0110,0x6923af9590bc1bec8a85328d3ce53bf00f167243,2024-12-14,IE,UTC-5,pl,enhanced,WalletConnect,x,none,4,10,,False,False,system,Macro,13.61,0,wallet-only,black,False
+tr_0111,0xc341ca2b411bc60d92bc394580434a741f87e830,2024-10-11,US,UTC+1,fr,basic,MetaMask,builder_app,silver,2,15,builder_alpha,False,False,light,Sports,15.39,1,wallet-only,gray,False
+tr_0112,0x765813f6359a5cf12d73297b93c44525960bcc85,2024-08-29,US,UTC+0,fr,none,MetaMask,telegram,platinum,0,10,builder_alpha,False,True,dark,Tech,1.0,2,wallet-only,black,False
+tr_0113,0xa5b8df11b6c2b27f062c7b86464ea895a2839b84,2025-06-02,US,UTC-8,es,none,Coinbase Wallet,podcast,none,0,10,,False,True,dark,Culture,10.78,0,real-name,purple,True
+tr_0114,0x7eebd28d0621f43b85072583ae4dd949648a12b4,2025-01-04,US,UTC-5,pl,enhanced,Phantom,discord,none,4,15,,False,False,dark,Tech,1.0,1,wallet-only,black,True
+tr_0115,0x41c9c5c94cda72cf1c22d5e087a5818667488edf,2024-12-13,CA,UTC+8,en,basic,Coinbase Wallet,newsletter,silver,6,20,,False,True,dark,Macro,19.93,0,wallet-only,orange,False
+tr_0116,0xfdbd87ca865057ab38ff62b07804154e90470b4a,2025-04-21,US,UTC+1,es,none,Coinbase Wallet,podcast,gold,4,10,,False,True,dark,Macro,21.61,0,real-name,gray,True
+tr_0117,0xfddefa77dcc00e2bd26d0a018f390dd5be9f8f6d,2024-01-18,ES,UTC+8,de,enhanced,Coinbase Wallet,discord,silver,4,15,builder_beta,True,True,light,Weather,1.0,0,real-name,black,False
+tr_0118,0xa1d8b174382bd04559b9711b29fcc351b3dae3c2,2025-03-07,US,UTC+8,es,enhanced,Coinbase Wallet,friend,none,2,10,,False,True,dark,Politics,2.68,0,wallet-only,green,False
+tr_0119,0x0b22533e24b4795a7ad0d683b5cc3b8dc1c4701a,2025-06-03,DE,UTC+1,de,basic,WalletConnect,x,silver,6,10,,False,True,light,Macro,8.14,0,real-name,gray,False
+tr_0120,0x2295690bad065a1e4720c7966d455a4fece86cf6,2024-07-13,US,UTC+0,fr,enhanced,WalletConnect,discord,silver,8,15,,False,True,dark,Politics,10.5,2,wallet-only,orange,True
+tr_0121,0x08eeff3fc25ff4cc7202e413313ad5757abeadbc,2024-11-20,DE,UTC+0,fr,basic,Phantom,discord,none,8,5,,False,False,light,Weather,6.21,0,nickname,black,False
+tr_0122,0x12c2cedb6617b939c55d9cea23365a646d0f62ad,2025-02-25,DE,UTC+8,pl,basic,Embedded,friend,none,6,15,,False,False,dark,Culture,11.86,0,wallet-only,green,False
+tr_0123,0x71a1dc059677f6c44a9c757585cf86a25e93db70,2024-11-25,DE,UTC+1,es,basic,Coinbase Wallet,newsletter,none,0,15,builder_alpha,False,True,system,Crypto,7.17,0,real-name,purple,False
+tr_0124,0x4175ea454d82505a950b311ba64fb3ddb87152fa,2024-01-20,US,UTC-5,en,enhanced,Embedded,organic,gold,6,15,,False,True,dark,Tech,14.75,1,nickname,purple,False
+tr_0125,0xe6f1eb60f4aed613448d3c57c6bc4a9ea4606249,2024-10-29,US,UTC-8,en,enhanced,Embedded,builder_app,none,6,15,builder_gamma,False,True,dark,Crypto,11.01,0,wallet-only,purple,False
+tr_0126,0xf530514bd9a56e05577b3ba40dfa853f545a0925,2025-01-19,US,UTC-5,en,basic,WalletConnect,newsletter,none,4,10,,True,False,dark,Weather,3.15,3,nickname,green,False
+tr_0127,0x6f0f873e29d13f922cb66c69551efc586d77d7e2,2024-12-08,CA,UTC+0,de,basic,Phantom,podcast,none,0,5,,False,True,system,Macro,8.71,0,wallet-only,black,True
+tr_0128,0x48572e6af6a929f9bf539715bea8dd25d2ee54e3,2025-02-28,US,UTC-5,fr,basic,WalletConnect,friend,none,8,5,builder_alpha,False,False,system,Culture,1.0,1,wallet-only,purple,True
+tr_0129,0x739fcf8195e27f00adfd164b1ca807b46dc5b8a6,2024-12-17,US,UTC+0,pl,basic,Rabby,x,none,4,10,builder_beta,False,False,dark,Politics,8.75,0,nickname,orange,False
+tr_0130,0x124dc1265ec31a1e73447cb99c243554f2a774bb,2024-07-02,GB,UTC+1,pl,none,Coinbase Wallet,organic,none,2,10,builder_beta,False,False,dark,Weather,6.5,1,wallet-only,gray,False
+tr_0131,0x246a03494bbf69252d55d7282e0f5434cca57eed,2024-01-27,DE,UTC+8,de,none,Coinbase Wallet,discord,none,2,10,,True,False,system,Tech,1.0,0,nickname,purple,False
+tr_0132,0xdc833a615188bdf0934bba3b709813d1e8039978,2024-04-06,US,UTC+1,en,basic,Rabby,telegram,none,0,10,,False,True,light,Macro,14.09,1,real-name,blue,False
+tr_0133,0xc5a311383799d1ec3c970c97288f4d34847ff75f,2024-04-04,FR,UTC-8,es,enhanced,WalletConnect,friend,platinum,2,10,,False,False,dark,Culture,13.61,1,real-name,green,True
+tr_0134,0x72164e7a82cc3858149922ccd92ffacc4e7d4255,2024-10-28,CH,UTC-5,de,enhanced,WalletConnect,builder_app,none,4,10,,False,False,light,Weather,13.7,2,real-name,blue,True
+tr_0135,0xb7666c6f5cfc0b3b455c58338d1357b7f0abe749,2024-10-20,GB,UTC-5,de,basic,Embedded,telegram,none,4,5,,False,True,system,Entertainment,1.0,0,real-name,blue,False
+tr_0136,0x61a45e12b5c62243139c4840c1cb5de7e2775ab4,2024-09-12,AE,UTC-5,pl,enhanced,Coinbase Wallet,referral_code,none,2,10,,False,True,dark,Culture,14.12,1,nickname,black,False
+tr_0137,0xb0166708e80608cc79ab9fc8cd1e9fcc647eba1a,2025-08-05,US,UTC+1,fr,basic,MetaMask,friend,silver,8,5,builder_gamma,False,False,system,Tech,17.66,0,wallet-only,green,False
+tr_0138,0x58bd6090d03643a57ac95ed2c3209dc8f5533464,2025-06-24,NL,UTC+8,de,enhanced,MetaMask,referral_code,silver,4,15,,False,True,light,Tech,14.5,0,real-name,green,False
+tr_0139,0xe352e7d67bb67636d12eb1c179b53fc54170c6d5,2024-07-11,US,UTC+1,pl,basic,WalletConnect,x,silver,6,10,builder_alpha,False,True,light,Sports,9.82,0,real-name,black,False
+tr_0140,0xfd6d4f1a67f4a523922bc0cda5622efbc2e1274a,2024-10-09,GB,UTC-8,fr,enhanced,Coinbase Wallet,organic,silver,4,5,,False,True,light,Crypto,11.08,1,nickname,purple,True
+tr_0141,0xe45c5e0de069820e1f17fd829a47e2a59b7bd332,2024-06-24,US,UTC-8,fr,basic,Coinbase Wallet,discord,silver,4,10,,False,False,dark,Crypto,25.66,1,nickname,gray,False
+tr_0142,0xf3116e132a5fa89ec26a9e0e603220c25975ad97,2025-04-02,US,UTC+1,en,enhanced,Phantom,friend,none,2,10,builder_alpha,False,True,system,Weather,14.23,2,wallet-only,green,True
+tr_0143,0x39814ce5e4c78aa5815af237184d46f1d86ff3d3,2024-06-10,PL,UTC+1,fr,basic,MetaMask,organic,none,4,10,builder_beta,False,False,dark,Crypto,21.69,0,wallet-only,purple,True
+tr_0144,0x0b592d8c53f8512a9dc2f9d4ff4efe72f0484e9f,2025-05-10,US,UTC+1,pl,basic,Rabby,x,none,0,20,builder_beta,False,True,light,Weather,10.14,0,wallet-only,green,True
+tr_0145,0x062dccf3ca63d1f4e1bf27ac0141a7a41b71fe54,2024-06-22,US,UTC+1,de,basic,MetaMask,newsletter,silver,2,5,builder_beta,False,True,system,Culture,1.0,1,real-name,blue,False
+tr_0146,0xf6e179ebcc31f995dadf6ad4b4486df11c379a1c,2025-05-08,US,UTC+1,en,enhanced,Coinbase Wallet,x,gold,6,10,,False,False,system,Entertainment,19.64,1,real-name,purple,True
+tr_0147,0xb8d68e699cf91c5ae66b5cd98fdaca090f1ecbd4,2024-10-26,DE,UTC+0,fr,basic,WalletConnect,friend,none,2,5,builder_alpha,False,False,system,Sports,18.97,0,wallet-only,green,False
+tr_0148,0xd5f3707f4c3c8565ddd59bd3d1ba57264b5cecf5,2024-10-05,IE,UTC+0,en,enhanced,Rabby,telegram,none,6,15,,False,False,light,Weather,12.03,0,nickname,purple,True
+tr_0149,0x19eb8c86b319e64b86e1fde491f708a47df33a30,2025-11-02,AU,UTC-5,fr,enhanced,WalletConnect,organic,silver,2,0,builder_alpha,False,False,system,Politics,8.74,0,wallet-only,blue,False
+tr_0150,0x309d6896d9aefbbfc45ee55f2df382fc875c9bba,2024-06-15,US,UTC-8,es,enhanced,Phantom,referral_code,silver,4,15,,False,False,dark,Politics,4.06,2,nickname,black,True
+tr_0151,0x8f790976f28805d2a1b9fbb7bff378a59ef28a50,2025-04-24,ES,UTC-5,es,none,Rabby,organic,gold,2,10,,False,False,system,Politics,23.31,1,nickname,purple,False
+tr_0152,0x9b51f98bb39c22a711f9f66b2515be7263fa5c80,2024-10-17,GB,UTC-5,fr,basic,Embedded,friend,none,0,5,,True,True,light,Culture,6.92,2,wallet-only,blue,False
+tr_0153,0x9f052f8060e9df39235de99ebe22d008ffc44528,2025-07-25,US,UTC-5,es,enhanced,Rabby,referral_code,none,0,15,builder_beta,False,False,system,Crypto,9.22,0,nickname,gray,True
+tr_0154,0xe79fefe86718553d365eecebd18a5898683573f6,2025-06-01,US,UTC+0,es,basic,Embedded,telegram,none,4,10,,False,True,dark,Politics,7.11,0,nickname,black,False
+tr_0155,0x6101894fccb80f49e8ab8043f0ddb825be1feb13,2025-07-03,US,UTC+1,es,basic,Phantom,friend,none,0,10,builder_gamma,False,True,dark,Culture,17.44,1,nickname,purple,False
+tr_0156,0x3a0e3be03ddffd5d023ae69da3eb4b664ed79a6b,2024-08-30,AU,UTC-5,en,basic,MetaMask,newsletter,none,0,15,,False,True,system,Crypto,2.05,0,real-name,gray,True
+tr_0157,0x7a3a1e725f4ae684911def872f713d2cc397290e,2025-05-06,IE,UTC-5,de,basic,WalletConnect,friend,silver,6,10,builder_alpha,False,False,system,Politics,9.6,0,wallet-only,purple,False
+tr_0158,0xc3359f5fe53a624123a7d13882f0a6892e521369,2025-08-31,FR,UTC-5,en,basic,WalletConnect,organic,none,2,15,,False,True,light,Sports,21.99,1,real-name,orange,False
+tr_0159,0xdc13a91aeea497ba95f7e2852a2ffe50c27b836d,2025-09-17,US,UTC-8,fr,enhanced,Coinbase Wallet,organic,none,0,0,builder_beta,False,False,light,Culture,8.61,0,real-name,green,False
+tr_0160,0x5f66b76556b3333da9e8c6a321a4dc903826827b,2025-01-12,SG,UTC-5,pl,none,MetaMask,builder_app,none,4,15,,False,True,light,Weather,13.3,1,nickname,purple,True
+tr_0161,0x6a4b926c367d2e5e9beac10d0d5e323d5e9d7b41,2025-01-14,US,UTC+1,en,basic,Coinbase Wallet,x,none,6,5,,False,False,system,Weather,14.77,0,real-name,green,True
+tr_0162,0x8e2689287fbefa27c26620bde92eff9efe12462f,2024-05-13,GB,UTC+0,pl,basic,Embedded,referral_code,none,0,10,,False,False,dark,Tech,24.21,1,real-name,purple,False
+tr_0163,0xcaf5bf19c0e62d348e7e034760bc7182f9b06e60,2025-06-10,GB,UTC+8,en,basic,Coinbase Wallet,podcast,none,0,10,builder_alpha,False,False,system,Weather,15.1,0,real-name,orange,False
+tr_0164,0xab5cdc65fb874ee1a581cc1152ccd00cd92ad7dc,2024-09-11,DE,UTC-8,de,basic,Phantom,x,gold,4,5,builder_gamma,False,True,system,Culture,16.53,0,real-name,blue,True
+tr_0165,0x11b3b11f0c3015873f924ad0202328fbb125f2a9,2025-07-05,US,UTC-8,de,enhanced,Embedded,builder_app,none,4,10,,False,True,dark,Tech,16.1,2,nickname,purple,False
+tr_0166,0x9846db8af4c115b9d1cb0b19e5aa14d7b77c5f39,2024-07-27,NL,UTC-5,pl,basic,MetaMask,telegram,none,2,10,,False,False,light,Weather,17.47,0,wallet-only,green,False
+tr_0167,0x0577edf7e72c6025fa60ca2921625064f837b6f2,2025-04-21,DE,UTC-5,es,enhanced,MetaMask,friend,silver,4,10,builder_gamma,True,False,system,Politics,8.33,0,nickname,purple,False
+tr_0168,0xf0f15743fc6042aa6124bcd5f176353d5efc8953,2024-10-26,US,UTC+8,es,none,Coinbase Wallet,builder_app,silver,2,10,,False,False,system,Weather,1.66,0,nickname,blue,False
+tr_0169,0x25af393d77081c9179ef47cc42d03a5d7245f98d,2025-09-01,CA,UTC-8,de,enhanced,Phantom,organic,silver,4,15,,False,False,system,Weather,8.5,1,nickname,purple,True
+tr_0170,0xaf91bb3c4c6d0420ac17e2a89c144b722f1d855b,2024-05-22,US,UTC+8,es,basic,WalletConnect,discord,none,6,20,,True,True,light,Sports,19.36,1,nickname,gray,True
+tr_0171,0x8aa65d0499e0b21128f3cf56c788a62dd71e43a8,2025-07-20,CA,UTC+0,es,basic,Coinbase Wallet,newsletter,none,6,10,builder_alpha,False,True,light,Entertainment,12.46,0,nickname,black,False
+tr_0172,0x0d30332d85ca0c7ab809390b95e238eb48823955,2024-02-03,US,UTC+8,es,enhanced,WalletConnect,organic,none,6,15,,False,True,dark,Entertainment,1.0,3,real-name,purple,False
+tr_0173,0x41409a8620cbd39bdaed50a9e4843257bb76ce79,2024-05-27,DE,UTC+0,es,none,Phantom,podcast,none,4,5,,False,True,system,Sports,8.23,0,wallet-only,orange,False
+tr_0174,0xcaf110000407bf15afb54a40127efe1afcee21b7,2024-10-03,CA,UTC+0,es,basic,Coinbase Wallet,builder_app,none,6,10,,False,False,light,Crypto,2.33,0,real-name,black,False
+tr_0175,0xeb4091b36606720eafebb34af3bcf09d8bcbb415,2025-07-02,ES,UTC-8,es,basic,WalletConnect,x,none,6,10,,False,True,dark,Tech,19.97,0,wallet-only,black,False
+tr_0176,0xd85eb85a695fc2aea6f142ea78ae5ef25abd9fcd,2025-05-28,AU,UTC-8,es,basic,Phantom,podcast,none,6,5,builder_beta,False,True,light,Crypto,13.69,1,real-name,gray,False
+tr_0177,0x6def88948fbac75d5e8d356c1a7de30c8121f36d,2025-11-20,CA,UTC+0,es,enhanced,Rabby,discord,silver,2,10,builder_gamma,False,False,dark,Weather,4.74,1,wallet-only,blue,True
+tr_0178,0x81d0012c14f656b463697907050bd681b95f7007,2024-11-15,PL,UTC-8,de,basic,Phantom,friend,none,4,5,,True,False,dark,Macro,1.0,0,wallet-only,purple,True
+tr_0179,0xe781bbe7b3f04cd3602dce787b6ea09b7e424512,2025-03-14,FR,UTC+1,en,basic,Phantom,podcast,none,0,10,builder_alpha,True,True,light,Crypto,18.04,1,nickname,green,True
+tr_0180,0xd370ccec025ad37be12bf975b08ba1748614f56e,2025-07-28,FR,UTC+0,en,none,Coinbase Wallet,friend,none,2,10,builder_gamma,False,True,light,Macro,18.49,0,nickname,purple,False
+tr_0181,0xee129a7f541c268322b00c1a90e2edc37716a8c2,2025-10-03,US,UTC-8,fr,enhanced,MetaMask,newsletter,none,2,15,,False,False,system,Crypto,17.96,0,real-name,blue,False
+tr_0182,0x28d18f93cd53406dc0ae69db29ceac294c6011e2,2024-03-31,PL,UTC+8,fr,basic,MetaMask,referral_code,gold,4,5,builder_gamma,False,False,dark,Macro,11.57,0,real-name,orange,True
+tr_0183,0xa567ce4854f86dbbe9a971758a444485ee954d86,2024-07-16,US,UTC+1,pl,enhanced,Embedded,discord,none,2,0,,False,False,system,Sports,1.0,0,real-name,blue,False
+tr_0184,0x46ace2c4a585c92bea3cd2a737498294fdf03ee7,2025-04-04,US,UTC-8,de,basic,MetaMask,builder_app,silver,4,15,builder_alpha,False,False,dark,Politics,8.76,0,real-name,black,False
+tr_0185,0xf949306f976125c0d484cea3e90594639948d285,2025-02-26,NL,UTC+8,fr,basic,MetaMask,podcast,none,4,15,,False,True,system,Culture,12.32,2,nickname,gray,True
+tr_0186,0x3cd39f1bf471d37223134996311b7b69684e7c85,2024-10-31,FR,UTC+8,fr,enhanced,WalletConnect,x,silver,6,20,,False,True,light,Weather,7.47,1,nickname,green,False
+tr_0187,0x79d95b9b6c356343970e3b7c6567be1435f72da9,2024-07-22,US,UTC-8,fr,enhanced,Embedded,builder_app,none,2,15,,False,False,light,Entertainment,12.03,1,nickname,purple,False
+tr_0188,0xcdf5c1e1b01e74d4e348310acff28fe3c3b11d21,2024-07-12,DE,UTC+8,en,basic,Embedded,discord,none,2,20,,False,True,dark,Crypto,25.81,0,real-name,blue,True
+tr_0189,0x7cb2e30dc80802022dd943213ac1607ca6868ff5,2024-05-10,US,UTC+8,de,basic,WalletConnect,podcast,gold,4,15,builder_gamma,False,True,dark,Entertainment,17.03,2,nickname,black,True
+tr_0190,0x9bbc8687c395496655306a2dcba43037777e760f,2025-02-28,DE,UTC+1,es,enhanced,Phantom,telegram,none,4,5,,False,False,system,Macro,16.18,1,nickname,gray,False
+tr_0191,0xee4076a69587ed753e2f2b403806c79408177c0c,2025-12-12,US,UTC+1,de,basic,Coinbase Wallet,telegram,none,0,10,,False,True,light,Weather,18.38,0,real-name,green,False
+tr_0192,0xb91fe6a7b42e16604f396d284e01d4717fe717e9,2024-07-29,US,UTC+8,pl,basic,Rabby,x,silver,6,10,builder_alpha,False,False,dark,Entertainment,7.29,0,wallet-only,purple,True
+tr_0193,0xfdf48ed5a8ad9acc3d64f4ff09c4d8d3f72185b6,2024-09-27,DE,UTC+0,fr,basic,WalletConnect,podcast,none,4,15,,False,True,dark,Crypto,17.3,1,wallet-only,green,True
+tr_0194,0x5127e15e6d270f13e7f96d49225611c0871fcaf0,2024-03-31,SG,UTC+8,es,basic,Embedded,organic,none,2,10,,False,True,light,Macro,15.12,0,real-name,gray,False
+tr_0195,0x22f5ad590e509f9d326f1998d4194ab19b0dabc5,2025-12-11,US,UTC+8,pl,basic,Embedded,x,none,4,5,builder_gamma,False,True,light,Crypto,5.38,0,real-name,blue,True
+tr_0196,0x84b6c3f453221911721cb9b61af89e3702310d42,2024-09-23,US,UTC+8,en,none,Phantom,builder_app,silver,8,15,,False,True,light,Politics,1.0,2,nickname,blue,True
+tr_0197,0x7a6b525f65e9b0cf67f2e39feb6cabc507d835ab,2025-01-13,DE,UTC+8,pl,basic,Phantom,friend,none,0,5,,False,True,system,Entertainment,10.28,0,nickname,gray,True
+tr_0198,0x88ef996fc7b88c056ac7eee935974a03e4480f76,2025-01-31,GB,UTC-8,es,basic,Embedded,organic,silver,2,10,,False,True,system,Tech,13.62,0,nickname,purple,True
+tr_0199,0x6fc4d868fca490f3a413f8583a1af02b4aa6e321,2025-08-20,CH,UTC+1,en,basic,Coinbase Wallet,newsletter,silver,0,20,,False,True,light,Tech,14.07,0,wallet-only,purple,False
+tr_0200,0xe4881fdd03ccff171cc71a41c563fbe9fcf258b3,2025-05-31,DE,UTC+0,es,none,MetaMask,referral_code,none,4,5,,False,False,system,Politics,12.07,0,wallet-only,orange,True
+tr_0201,0xfc556c18c33acb1f3ae7c6a30705fea6dfd1d981,2024-09-30,SG,UTC-8,en,basic,MetaMask,x,gold,0,10,builder_gamma,False,False,light,Entertainment,8.57,0,nickname,blue,False
+tr_0202,0x27fb590d54d4d04f246256181440f5bde9d5145e,2024-09-07,US,UTC-5,en,enhanced,MetaMask,podcast,none,2,0,,False,False,dark,Macro,5.13,1,nickname,orange,False
+tr_0203,0x23c34d88dc89b484ec0e6a401f917758498c12a9,2025-07-26,US,UTC+1,de,basic,MetaMask,x,platinum,8,20,,False,False,system,Crypto,1.34,0,real-name,blue,False
+tr_0204,0xda03b2fd8f084cc3803a38569e43d16a7f63422a,2024-07-31,US,UTC+1,es,basic,Embedded,referral_code,none,4,5,builder_beta,False,False,dark,Macro,7.44,0,real-name,purple,True
+tr_0205,0x1a20fbba23f9abd0132bcd56aa73a35dda7f6462,2024-11-27,GB,UTC-5,de,basic,WalletConnect,builder_app,none,6,5,,False,False,dark,Culture,14.46,2,nickname,orange,True
+tr_0206,0xcdb831442c7c17433ddf4772ca6f8a24541d8461,2025-03-21,US,UTC+8,es,basic,WalletConnect,builder_app,none,2,15,,False,True,system,Sports,11.61,0,real-name,black,False
+tr_0207,0xf1e43fed9eeaf0f5b890314c4c9aaf9569e5d5c8,2024-12-16,US,UTC+1,de,basic,Coinbase Wallet,organic,gold,4,10,builder_beta,False,True,light,Weather,15.62,1,nickname,gray,True
+tr_0208,0x768b1e3d36f1af72b314e6faee1e9149bf3742cb,2024-07-15,US,UTC+0,fr,none,WalletConnect,x,none,4,20,builder_beta,False,False,dark,Entertainment,17.21,0,wallet-only,blue,False
+tr_0209,0xe7fce18390bec82bf9a3d302d340790bb5ccd6bd,2025-02-15,GB,UTC+0,en,basic,MetaMask,x,none,6,10,,False,True,light,Tech,7.17,0,real-name,purple,False
+tr_0210,0x26202d612166b2bbe8e9f957d9a372d759ecd34c,2024-07-11,AU,UTC+0,fr,basic,Coinbase Wallet,x,none,4,15,,False,False,dark,Entertainment,6.13,0,wallet-only,black,False
+tr_0211,0x719c20b8d86abd02ec30d81818148d07d2cb1276,2024-02-08,SG,UTC+0,fr,basic,Phantom,newsletter,silver,6,10,,False,False,system,Tech,1.2,0,nickname,orange,True
+tr_0212,0xa1c7af5000a0c05cc913f1c85cb9bf5ac844282a,2024-11-28,PL,UTC+0,fr,enhanced,Rabby,podcast,none,4,15,,False,True,system,Entertainment,7.15,0,wallet-only,green,False
+tr_0213,0x848c2d49060609043555886932435a5dc60ba036,2025-09-25,ES,UTC+8,es,enhanced,Embedded,podcast,none,0,10,,False,False,light,Politics,8.21,0,wallet-only,orange,False
+tr_0214,0xd89c09afe214016d1880a4d2f7e86c81421b9429,2025-01-08,US,UTC+8,fr,basic,Rabby,organic,gold,0,10,,False,True,dark,Crypto,6.23,0,wallet-only,green,False
+tr_0215,0xab6236b5b834c1dd4f65ccd063a5a4fe0166449d,2024-08-03,US,UTC-5,de,basic,WalletConnect,builder_app,silver,8,5,builder_gamma,False,True,dark,Tech,18.02,2,real-name,blue,True
+tr_0216,0x8ecb5882f5f7d0b0a0d3e3c5d45b6321198bc893,2025-04-20,CH,UTC+8,pl,none,Embedded,referral_code,none,4,5,,False,True,dark,Weather,15.05,0,real-name,blue,True
+tr_0217,0x9a33653edbfe98c567868de02df01c129e367b44,2024-09-01,US,UTC-5,es,enhanced,Coinbase Wallet,builder_app,none,6,15,,False,False,dark,Sports,15.83,1,wallet-only,orange,False
+tr_0218,0xf1b60935c204118c48367d9c62bf9817561ebd48,2024-11-20,US,UTC+8,en,none,Embedded,x,none,2,0,builder_gamma,False,False,system,Macro,5.16,1,real-name,green,False
+tr_0219,0x6bdac5766c0b12c003f836e1d0275b123e5d8297,2024-07-12,US,UTC-8,fr,enhanced,Embedded,friend,none,2,15,,False,True,dark,Weather,21.94,0,nickname,green,True
+tr_0220,0xd68e9fd4f148cfc53deb863a9115b0d8f9149eb7,2025-02-27,ES,UTC+1,de,basic,MetaMask,podcast,none,0,5,builder_beta,False,True,system,Politics,15.19,0,nickname,black,False
+tr_0221,0x4c699f69cdadacbacd182c9a9294ce9cdfe1dc3c,2024-11-06,PL,UTC-8,fr,enhanced,Coinbase Wallet,referral_code,none,4,15,builder_alpha,False,True,dark,Culture,5.82,2,real-name,blue,False
+tr_0222,0xc69f09082a76ea238f395aeae8a80d4056afe960,2024-02-25,US,UTC-8,fr,none,Embedded,referral_code,none,0,15,,False,True,system,Macro,26.85,1,wallet-only,blue,False
+tr_0223,0xcc6c82a1895ae38c1decc55e1dc629cd4edd2c0a,2024-06-29,AU,UTC+8,fr,basic,Rabby,x,none,4,10,builder_alpha,False,True,light,Crypto,10.2,0,nickname,green,False
+tr_0224,0x89e6f1f63139dd0f60a1a1b062a39762b3407742,2024-06-22,FR,UTC-8,en,enhanced,WalletConnect,newsletter,silver,0,10,,True,True,light,Weather,9.29,1,wallet-only,green,False
+tr_0225,0xb726da9581dbdeef9e1c0ea4f3712e5e3e67e73f,2024-05-21,GB,UTC+1,de,enhanced,MetaMask,discord,gold,0,20,builder_beta,False,True,light,Weather,16.2,0,real-name,blue,False
+tr_0226,0xea12636df578f637e849b290d40d6407ad68eeb7,2024-11-04,US,UTC-8,en,basic,MetaMask,organic,silver,8,15,,False,True,dark,Weather,7.61,0,real-name,green,False
+tr_0227,0x8e1daee9d138f28b7b936dd8ed2a503cf0c9b6af,2025-01-07,SG,UTC-8,pl,basic,Phantom,friend,silver,2,10,,False,True,system,Entertainment,5.69,0,real-name,green,False
+tr_0228,0x7b6f36c2c5081d2a52faa05fea621ae19567909c,2024-08-01,US,UTC+8,pl,basic,MetaMask,organic,none,0,15,,False,True,light,Politics,10.32,0,wallet-only,purple,False
+tr_0229,0x4694802e0509ba8f9b842e5b8aa4787ceb752e66,2025-10-08,CH,UTC-8,fr,basic,Coinbase Wallet,builder_app,none,2,15,builder_beta,False,True,light,Crypto,5.94,0,nickname,gray,False
+tr_0230,0x3ca094cf1af78629e8b2d597bc8a0aac5beadc6b,2024-04-30,CA,UTC+0,es,none,Embedded,podcast,none,4,20,,False,True,system,Macro,26.64,0,real-name,gray,False
+tr_0231,0x570a2e2bd428762d923fabdcd3f8e9164ae2cbe2,2024-10-03,CA,UTC+1,pl,none,WalletConnect,newsletter,none,2,5,,False,False,dark,Tech,12.7,0,nickname,blue,False
+tr_0232,0xf6f2f3b59a1df1b50a8ff8057ad33a1a89e17708,2025-06-02,US,UTC-5,pl,enhanced,Phantom,organic,none,4,15,,False,False,dark,Crypto,13.06,0,wallet-only,black,True
+tr_0233,0xb940d3457551b5ed7d836d0f4dba1fc0579f1970,2024-11-19,DE,UTC-5,es,basic,Rabby,newsletter,none,6,20,,False,True,light,Tech,3.96,0,real-name,green,False
+tr_0234,0xb2742d8d5225cc605c8c7742755ba859fc5b922f,2024-08-09,US,UTC-8,es,basic,Rabby,x,none,0,5,builder_gamma,False,True,system,Macro,15.14,0,wallet-only,green,False
+tr_0235,0xefc652de0c53a3f2eedcd10503a8214d869f77df,2024-02-26,NL,UTC+8,de,basic,WalletConnect,podcast,platinum,4,10,builder_beta,False,False,dark,Weather,14.19,1,real-name,purple,False
+tr_0236,0x37a7fa2058b253f8c28db3132d041601342b7027,2024-01-14,ES,UTC+8,de,none,Phantom,organic,none,4,10,,False,True,dark,Politics,8.75,1,wallet-only,blue,False
+tr_0237,0x817ce75b5a76df598ca7e8b6827171a3cbeaffe5,2024-06-07,US,UTC+8,de,basic,Embedded,friend,none,6,5,builder_alpha,False,False,dark,Sports,6.74,1,real-name,blue,False
+tr_0238,0x2999befbca9a3832ab39e38467abe3c4f944cc9b,2024-02-11,ES,UTC+0,fr,basic,Embedded,organic,none,2,10,builder_beta,False,False,dark,Entertainment,1.54,0,wallet-only,blue,True
+tr_0239,0x27dd722103e78717e598e32cc1c6cd82e489fe88,2025-02-28,US,UTC-8,en,none,Rabby,x,platinum,4,10,,False,True,light,Crypto,4.86,0,wallet-only,blue,True
+tr_0240,0x953bb582a60dcfc344eadd911d23bed029cb9504,2025-07-09,NL,UTC-5,de,enhanced,Coinbase Wallet,builder_app,silver,0,15,builder_beta,True,False,light,Crypto,7.97,0,nickname,green,True
+tr_0241,0x7ab393067391f202231ab77a09b116221b7baece,2025-07-25,GB,UTC-5,pl,basic,WalletConnect,organic,none,2,15,builder_gamma,False,True,system,Politics,18.21,0,real-name,gray,True
+tr_0242,0x39b09658a7ecc1c414caa250af242d9b5fbd1bac,2024-02-20,AE,UTC-8,es,enhanced,Embedded,organic,gold,4,15,,False,True,system,Entertainment,14.99,0,wallet-only,black,False
+tr_0243,0x3a92b701f1465554e30fec0fe65237090bf6d032,2025-07-23,US,UTC-5,en,basic,Rabby,discord,platinum,4,15,builder_gamma,False,True,system,Macro,17.58,2,wallet-only,gray,False
+tr_0244,0x4ae54ddaa3b4319e67ea5e417af562371d4618cc,2024-05-26,US,UTC+1,fr,basic,MetaMask,podcast,none,2,20,,False,True,dark,Politics,4.61,0,wallet-only,purple,False
+tr_0245,0x800ec816c12888ca720bfb730737310d5844c2b0,2025-09-06,US,UTC+8,fr,basic,Coinbase Wallet,referral_code,none,4,5,,False,False,light,Politics,14.56,0,nickname,purple,True
+tr_0246,0x928856640103ad36de7466d198db70f66459cc09,2024-08-18,US,UTC-8,es,basic,Coinbase Wallet,x,silver,0,5,builder_beta,False,True,dark,Culture,6.27,0,nickname,blue,True
+tr_0247,0xa140a98f1bcda403f1c098c4dde69faa39ad6846,2024-05-18,DE,UTC-8,en,basic,MetaMask,organic,silver,2,15,,False,False,dark,Crypto,14.23,0,wallet-only,green,False
+tr_0248,0x61340743252bfa99ef70be26fa078d82102a0ca1,2025-11-25,US,UTC-5,es,enhanced,MetaMask,friend,none,6,15,builder_gamma,True,False,light,Crypto,15.06,2,real-name,purple,True
+tr_0249,0xeefc3ac99ec721ffb8afe8ddfee42c7e58e97870,2024-06-06,US,UTC-8,de,basic,Embedded,x,none,6,20,,False,False,system,Crypto,10.74,0,real-name,blue,False
+tr_0250,0x2c40771dd6191a12ea9c96e2b6fada005b4cc650,2025-02-14,US,UTC-5,fr,basic,Embedded,newsletter,gold,4,5,builder_alpha,False,True,light,Tech,11.62,0,wallet-only,green,False
+tr_0251,0xea24eb8561e9daa2aeeb49634907410812f5cd68,2024-02-05,US,UTC+0,es,enhanced,Rabby,newsletter,none,2,10,,False,False,dark,Macro,4.98,1,wallet-only,blue,False
+tr_0252,0x289c38889e247fc7969143d9cb5c9dfdb13be5f0,2025-05-29,US,UTC+0,en,enhanced,Coinbase Wallet,discord,none,0,10,,False,True,system,Politics,3.76,0,wallet-only,orange,False
+tr_0253,0x4815d02e4421150340961c7ebc248ca8fbd78114,2024-05-23,GB,UTC-8,fr,enhanced,Rabby,discord,gold,4,10,,False,True,light,Sports,13.19,1,real-name,purple,True
+tr_0254,0x8fcd9eaf898c3f697e64e1545a19ba0a75b6b511,2025-11-21,US,UTC+0,es,basic,MetaMask,referral_code,none,4,5,,False,True,dark,Crypto,29.64,1,nickname,black,True
+tr_0255,0xa0d8cc356b28450709a42892466dcb8670c40c46,2025-08-29,CA,UTC+1,de,enhanced,MetaMask,telegram,none,2,20,,False,False,system,Macro,4.33,2,wallet-only,purple,False
+tr_0256,0x5c5e9c453cc02d5cecd26b065930ba2224fc6eb7,2025-05-12,AU,UTC+8,pl,basic,Embedded,friend,none,4,10,builder_alpha,False,True,dark,Culture,17.01,0,wallet-only,purple,False
+tr_0257,0x6c9612b15f8f8860cf0786bf2d29f7c0c7f642c1,2024-01-13,GB,UTC+8,de,basic,Embedded,telegram,silver,2,10,builder_alpha,False,False,system,Weather,8.07,1,wallet-only,gray,True
+tr_0258,0xbe083c73596c08fa548418c8e5cf0a645a523e1f,2025-08-19,AU,UTC+1,pl,none,MetaMask,builder_app,none,6,10,,False,True,light,Sports,4.6,0,wallet-only,green,False
+tr_0259,0x2b7c9bfa9d17cc34ab70d86217ba0d96305a09c3,2024-07-10,US,UTC+0,de,enhanced,Embedded,newsletter,none,8,10,,False,False,dark,Crypto,11.27,1,real-name,gray,True
+tr_0260,0xb8293de0ddcb8b674ed524ef46d385193b80acca,2024-03-16,US,UTC-5,de,basic,Coinbase Wallet,referral_code,none,2,15,builder_alpha,False,True,light,Tech,5.09,1,real-name,orange,False
+tr_0261,0x39278adbc96982eb0f5927472601b9b644eda923,2024-03-05,FR,UTC+8,de,enhanced,Rabby,x,none,4,10,builder_beta,True,False,system,Crypto,16.58,0,real-name,gray,False
+tr_0262,0x91ffa76df9f8809e21d03e0b661e8aa8c760145c,2025-11-12,DE,UTC+1,es,enhanced,Phantom,friend,none,0,15,,False,True,dark,Culture,25.87,1,real-name,blue,False
+tr_0263,0x4e38eaa18076cda34d9dc03c0d625dff9710b6fa,2025-11-24,IE,UTC+1,pl,enhanced,Coinbase Wallet,discord,none,8,10,builder_beta,False,False,system,Crypto,11.9,0,wallet-only,orange,False
+tr_0264,0x610ae411df34c819e9c780cc684289929c8888a1,2024-09-13,SG,UTC+8,de,enhanced,Coinbase Wallet,builder_app,silver,2,10,builder_alpha,False,False,system,Entertainment,10.97,0,nickname,black,False
+tr_0265,0x8aac10c65d9e092f2ec5da9d20f80fe521755f77,2025-07-01,US,UTC+8,pl,basic,MetaMask,builder_app,silver,4,15,builder_alpha,False,True,dark,Macro,4.39,0,real-name,purple,True
+tr_0266,0xba249c1ad8499f622f597cee4b42d547d5c2d2d5,2024-12-18,US,UTC+1,es,basic,Embedded,friend,none,2,5,,False,False,light,Crypto,16.41,1,real-name,blue,False
+tr_0267,0xdb0b16ee6f732d72285bc018fd2bb3266eec5705,2024-08-21,GB,UTC-8,fr,basic,Rabby,telegram,silver,8,20,,False,False,system,Macro,15.56,0,nickname,green,False
+tr_0268,0x8bf19f9de1d121eb3dc09301650f4bf18c854c29,2025-08-01,US,UTC-8,fr,enhanced,MetaMask,newsletter,none,4,5,builder_alpha,False,True,system,Crypto,15.66,0,nickname,green,True
+tr_0269,0x799d624fc6bfc827cc1eb1405893274fcb78e3d2,2024-09-25,US,UTC-5,es,enhanced,Rabby,friend,silver,2,5,builder_alpha,False,False,system,Entertainment,6.16,0,real-name,green,False
+tr_0270,0x86480638ffee88f53ecad620577405955632d985,2025-01-08,US,UTC+0,fr,enhanced,Phantom,telegram,none,4,10,builder_gamma,False,False,system,Tech,8.41,0,real-name,black,False
+tr_0271,0xc17bba9e111cf1f054fa0b20b53deb1201275c9d,2024-06-16,FR,UTC+8,de,enhanced,Coinbase Wallet,friend,gold,6,5,,False,False,dark,Sports,2.79,1,real-name,gray,False
+tr_0272,0x026ce113b2efaa4a904f7cbd78eb9503c106f9fc,2024-09-24,US,UTC-8,pl,basic,Rabby,friend,silver,2,10,,False,True,dark,Politics,5.33,0,real-name,purple,False
+tr_0273,0x0b905fe68bc18aeff59ef5c3592510f99a66ed08,2025-07-26,DE,UTC-8,pl,basic,WalletConnect,discord,none,2,10,,False,True,dark,Culture,19.86,0,nickname,blue,False
+tr_0274,0xb70b374abfa949f53076d253ad1364e218202fb2,2024-03-13,US,UTC+0,fr,basic,WalletConnect,discord,gold,2,15,,False,True,system,Crypto,14.38,1,nickname,orange,True
+tr_0275,0xc4d1b00e6a50c8e832e1632e4afe7cf8f7dd1996,2025-12-06,NL,UTC+8,pl,enhanced,WalletConnect,referral_code,none,2,0,builder_gamma,False,True,light,Sports,14.94,0,nickname,green,True
+tr_0276,0x20f3aece2581770907152b826f1cb25ec8eba96c,2025-04-19,FR,UTC-5,es,enhanced,Embedded,organic,gold,4,15,,False,True,system,Tech,10.19,0,wallet-only,green,False
+tr_0277,0x8358195bb7b1800f538c9386f89ec4f40182c208,2024-11-04,US,UTC-5,en,enhanced,Coinbase Wallet,telegram,none,0,5,builder_gamma,False,True,system,Tech,14.46,0,real-name,purple,True
+tr_0278,0x98ad3a2447432b816f59302a0030eb32b7d2e3b0,2024-08-03,GB,UTC+0,fr,enhanced,Coinbase Wallet,newsletter,silver,6,10,,False,False,light,Entertainment,1.0,0,nickname,purple,False
+tr_0279,0xc215043ad5c3d75e18210296eab769d2b81c4dbd,2025-04-15,US,UTC-5,fr,basic,WalletConnect,organic,platinum,8,5,,False,True,light,Entertainment,1.0,1,real-name,purple,True
+tr_0280,0x1629c3178585dde7ce6be186544c4a76fa93360a,2024-05-06,AU,UTC+0,pl,basic,MetaMask,referral_code,none,0,10,,False,True,dark,Sports,12.24,1,wallet-only,black,False
+tr_0281,0x67222e142362d5ab42adaf87ff9be234d19a4353,2024-07-23,PL,UTC+8,de,basic,WalletConnect,x,none,4,15,builder_alpha,True,True,light,Crypto,12.27,0,real-name,purple,False
+tr_0282,0x2ffff2508343dc31dd865b57be94579ec4ceaf53,2024-05-09,DE,UTC-5,de,none,Coinbase Wallet,referral_code,gold,0,0,,False,False,light,Culture,14.13,0,nickname,orange,False
+tr_0283,0x57d6e98f1341558e9eee415c95f96d2d37f25bf4,2024-10-16,US,UTC-5,en,none,MetaMask,discord,none,0,10,,False,False,light,Politics,6.28,0,real-name,gray,True
+tr_0284,0x6e4ffa93efd454b093c3fa08a1fde21581e425f4,2025-07-30,US,UTC+8,es,basic,Embedded,friend,none,4,10,,False,False,light,Crypto,13.2,0,real-name,green,False
+tr_0285,0xe6ec4daa07a2ad08ced377965371ea0cbdde1e5a,2025-03-01,US,UTC+1,es,basic,Embedded,podcast,none,6,15,,False,True,dark,Sports,9.74,0,real-name,green,False
+tr_0286,0xa002d2245af104fb1ec8a1fe33952c2b92bdc5bf,2025-03-13,PL,UTC-5,pl,none,Rabby,friend,silver,8,10,,True,True,dark,Weather,23.39,0,real-name,gray,False
+tr_0287,0x5ea332ac7b389057bedc3368f710f029c182d617,2024-03-03,US,UTC+0,fr,enhanced,Embedded,newsletter,platinum,2,5,,False,True,dark,Tech,7.11,1,nickname,orange,True
+tr_0288,0x21aff3faa21dad6b4dc75c23f3b2fe8ac4f5fd9b,2025-03-18,CA,UTC+0,pl,enhanced,WalletConnect,podcast,none,0,10,,False,True,dark,Crypto,11.44,2,real-name,purple,False
+tr_0289,0xaad2f66d9f3ae3ec7c1a84a71375dfca50a3660c,2025-03-28,US,UTC+8,pl,basic,Rabby,friend,none,0,20,,False,False,dark,Politics,12.5,1,nickname,blue,False
+tr_0290,0xa3d751bc059cea56b19e560e1b93585270246209,2024-03-08,CH,UTC+0,es,basic,Rabby,podcast,silver,2,5,builder_beta,False,True,light,Entertainment,8.15,1,real-name,orange,False
+tr_0291,0xa1b14f9c6f68a698327719c2aa0fbf8785defaeb,2024-10-12,GB,UTC-8,pl,none,Coinbase Wallet,friend,silver,4,5,builder_beta,False,True,dark,Entertainment,14.57,2,wallet-only,orange,False
+tr_0292,0x411c53faca21011dc76f97e7b06864a6699ee1d6,2025-06-02,FR,UTC-8,en,basic,MetaMask,builder_app,gold,8,10,builder_gamma,False,True,light,Crypto,12.98,1,nickname,green,True
+tr_0293,0x5b0d065b70bf99f71aa2b33b9b2522634fd9e989,2024-12-18,US,UTC+0,es,basic,Embedded,podcast,none,4,15,builder_beta,False,False,light,Weather,15.66,0,nickname,orange,True
+tr_0294,0x56e66454eeb441e96e9c3bd473ee48aa8205697e,2025-07-24,US,UTC+8,pl,basic,Phantom,x,none,2,10,,False,False,dark,Entertainment,1.0,0,real-name,blue,False
+tr_0295,0xfa8c8d4310e92b1705e83ac579d230464e299d2b,2025-03-19,US,UTC+0,en,basic,MetaMask,telegram,none,6,10,builder_beta,False,True,light,Sports,15.36,1,wallet-only,orange,False
+tr_0296,0x521b7dd8939adf86ce9f4544561385e42d2a2d37,2024-01-13,CA,UTC+8,en,enhanced,MetaMask,x,gold,6,20,builder_alpha,False,False,light,Sports,12.94,0,nickname,gray,False
+tr_0297,0x26a03798bc6dd0cfabe94cf2c1a7e14f4d03cdf2,2024-12-28,US,UTC-8,en,basic,Phantom,organic,silver,6,15,,True,False,light,Weather,1.31,0,nickname,orange,False
+tr_0298,0xd9462cbcc32f93226f3e33471ba67e0d279c5e04,2025-11-25,CA,UTC+8,pl,enhanced,Coinbase Wallet,podcast,none,4,5,,False,True,dark,Politics,17.57,1,wallet-only,gray,True
+tr_0299,0x50f239cd204ec087fccce0722c4e0dbe4e7c1eab,2025-01-28,DE,UTC-5,es,basic,MetaMask,podcast,gold,2,15,,False,False,light,Sports,18.94,1,wallet-only,blue,False
+tr_0300,0x541c9de0588e2aa5d129c9b6c448bf7a7c122108,2024-02-29,PL,UTC+1,de,enhanced,Phantom,builder_app,none,6,10,,False,False,system,Crypto,24.7,0,real-name,black,False
+tr_0301,0xf0bf8cb0ef1dd7bce9599459be112efb3820d212,2025-07-14,US,UTC-5,pl,basic,Coinbase Wallet,podcast,none,6,10,,False,False,system,Weather,20.58,0,nickname,green,False
+tr_0302,0xaa4e6feb083f47e088895402d96859d3a79e6a3f,2024-07-21,US,UTC+1,de,basic,Phantom,telegram,none,4,10,,False,True,dark,Entertainment,14.01,1,wallet-only,purple,True
+tr_0303,0x9532e7c2526e51c2a9e241efc325cb667b26dbaf,2024-04-04,US,UTC-8,fr,basic,Phantom,builder_app,silver,6,5,,False,False,system,Politics,4.4,0,wallet-only,green,False
+tr_0304,0x06548a8131ac048db2d1d1dc54aeb8d88f40c158,2025-11-23,US,UTC+8,en,basic,MetaMask,builder_app,silver,2,0,builder_alpha,False,False,light,Entertainment,11.72,0,nickname,purple,True
+tr_0305,0x0442d0c2ee7a7d8cfa4dbc162429b621241498c1,2025-05-28,CH,UTC-5,de,none,Rabby,newsletter,gold,2,10,,False,False,dark,Culture,14.26,0,real-name,green,True
+tr_0306,0xbfe9dd1d7d69f4b12b180e60b200eb836d0a5238,2024-04-29,US,UTC+1,en,basic,Phantom,newsletter,silver,4,10,builder_beta,False,True,system,Entertainment,4.79,0,wallet-only,purple,False
+tr_0307,0x3be826c2cc0786dced28ee8eae3d6b8aefecc273,2024-02-23,US,UTC+0,es,basic,Embedded,podcast,none,4,20,,False,True,dark,Sports,14.6,0,wallet-only,black,True
+tr_0308,0x8f1f3ac339188f52bb17bcf0f76a6a590e81a4c9,2024-12-09,GB,UTC+8,en,basic,MetaMask,telegram,silver,0,15,,False,True,dark,Entertainment,21.92,0,wallet-only,black,True
+tr_0309,0x776781f6da84a2afd265f662d915399e259aa074,2024-01-27,US,UTC-5,de,basic,Coinbase Wallet,x,none,4,15,builder_alpha,False,False,dark,Crypto,17.06,0,real-name,orange,False
+tr_0310,0x2d047c69f17978894a4599618ccd1747f569c16c,2024-04-23,NL,UTC-5,fr,enhanced,Coinbase Wallet,telegram,none,2,15,,False,False,light,Tech,21.13,1,real-name,orange,False
+tr_0311,0x845c2ace52df2276490d2848c0e93a07a8397db1,2024-01-23,US,UTC-8,es,basic,WalletConnect,discord,none,8,15,,False,True,system,Sports,13.52,0,wallet-only,blue,False
+tr_0312,0x5f32fce03abc69d9a0f548c378df6987b0176a01,2024-01-18,US,UTC+0,fr,basic,Phantom,friend,none,6,10,builder_beta,False,True,dark,Culture,16.22,1,nickname,orange,True
+tr_0313,0xc6e13e4f2907af8ed5402c1e967562f2953aa707,2024-12-16,US,UTC+1,es,basic,WalletConnect,builder_app,none,2,15,,False,True,light,Politics,7.95,2,wallet-only,blue,True
+tr_0314,0x768a59951d330df4b32de0b6afe1b7eaa72c8835,2024-09-05,US,UTC-8,de,none,Embedded,builder_app,silver,4,10,,False,True,system,Politics,19.87,1,wallet-only,black,True
+tr_0315,0x5a8294a5b56f551150d041747ca5278bb1c754c9,2024-09-24,US,UTC-5,fr,enhanced,Embedded,x,none,6,0,,False,True,system,Weather,12.46,1,nickname,black,False
+tr_0316,0x34e35783131cb3aef60782e1c770d6512745aeb7,2025-09-06,PL,UTC+1,en,enhanced,Embedded,friend,gold,4,10,,False,False,light,Entertainment,10.49,2,nickname,blue,False
+tr_0317,0xc8191674d7b762c9143699ea6f599cb1887983eb,2024-02-28,IE,UTC-8,en,none,Phantom,friend,silver,6,5,,False,False,system,Sports,1.0,0,real-name,blue,True
+tr_0318,0x2b868e244fc4ceab978ede5b58fbd0279b9eddd4,2025-04-22,CH,UTC+0,pl,basic,Rabby,referral_code,none,2,15,,False,True,system,Macro,15.12,0,nickname,blue,True
+tr_0319,0x8ae710594feccc37d8681ba38cd113f784e9e0ca,2024-09-04,SG,UTC+8,pl,enhanced,MetaMask,builder_app,none,6,5,builder_gamma,False,True,system,Weather,1.99,0,real-name,gray,True
+tr_0320,0xdd9dd7952de93c1d58cc7bca3a0b1390f8df4a51,2025-04-26,US,UTC-5,pl,basic,Embedded,podcast,gold,4,10,,False,True,system,Weather,14.22,0,nickname,gray,True
+tr_0321,0xb008dcdb05e4b315bc766e1b899339ba8ffd65f7,2024-06-22,US,UTC-8,de,basic,Embedded,builder_app,none,6,10,,False,False,dark,Macro,25.27,0,nickname,gray,True
+tr_0322,0x3add3725e146a028377d86c60e48641b601f7fa3,2025-01-16,US,UTC+0,fr,basic,Rabby,telegram,none,4,15,builder_alpha,False,False,system,Crypto,13.74,0,wallet-only,blue,True
+tr_0323,0x8de64ff0a82f0266e81aa7899ce99074cedab028,2024-04-02,DE,UTC+8,en,basic,Coinbase Wallet,referral_code,none,4,10,,False,True,system,Macro,1.0,3,real-name,purple,False
+tr_0324,0xc49745f1bdc8e277e0fcffccddcc043881787bf3,2024-10-06,GB,UTC-8,es,basic,WalletConnect,referral_code,none,0,10,,False,True,dark,Crypto,2.65,1,wallet-only,purple,True
+tr_0325,0x36c7d1b991f3ddf2224204a2de9b570c10bbd492,2024-11-21,US,UTC+1,fr,basic,MetaMask,x,none,0,15,,False,False,light,Macro,18.08,1,nickname,blue,False
+tr_0326,0x5cda0791a2c879b7bfd932174244ea361d0366b3,2025-01-17,ES,UTC-5,pl,enhanced,MetaMask,builder_app,none,6,0,builder_alpha,False,False,light,Weather,15.96,0,wallet-only,gray,False
+tr_0327,0x726b2e209c3e6293f90790135cf0791c07218608,2024-08-10,CA,UTC-5,pl,enhanced,Rabby,podcast,none,2,5,builder_alpha,True,False,dark,Tech,12.82,0,nickname,green,True
+tr_0328,0xea720d5ecbcf12cf70430fdc4ce22a0539c2beb9,2024-04-05,ES,UTC+0,de,basic,Coinbase Wallet,friend,silver,2,10,,False,True,system,Weather,12.2,0,wallet-only,black,False
+tr_0329,0x4dc72932a51e717db0f2fd5810191f8e1c86c498,2024-04-25,US,UTC+1,en,basic,Coinbase Wallet,organic,none,4,15,,False,True,system,Macro,9.36,0,nickname,purple,False
+tr_0330,0x676efa27fe8470b7aff104d2606bcecf39b23538,2024-12-05,US,UTC+0,es,basic,WalletConnect,newsletter,none,0,10,,False,True,light,Politics,9.32,0,real-name,blue,False
+tr_0331,0x84f023f642b012b7f20e03300834b631089cf11c,2024-01-24,US,UTC+8,pl,basic,Embedded,organic,none,4,15,builder_beta,False,False,system,Tech,1.0,1,real-name,gray,False
+tr_0332,0x0fd6cad27eb98cbb968b4fffd87430edf8a311df,2024-05-09,NL,UTC-5,pl,basic,WalletConnect,newsletter,none,4,10,builder_beta,False,False,dark,Culture,19.51,0,nickname,gray,True
+tr_0333,0x11e5a8548cf4f34d0553605f949bd62002ebcb81,2025-01-25,GB,UTC-8,en,basic,Rabby,referral_code,silver,6,10,builder_beta,False,True,dark,Macro,7.75,0,nickname,green,True
+tr_0334,0x8ea89cf2e28814523ea34f3f0421cf858afacf50,2025-03-28,ES,UTC+0,de,enhanced,Embedded,referral_code,none,0,0,,False,True,dark,Entertainment,20.11,2,nickname,black,True
+tr_0335,0xae107206018870bb2f2be652a48576c3deec4bf4,2025-10-09,US,UTC-8,es,enhanced,MetaMask,x,none,4,5,,False,True,dark,Culture,10.48,0,real-name,purple,False
+tr_0336,0x227fd4d09507ba3b72386762fcb27f6f8db65b62,2025-03-11,US,UTC+8,es,enhanced,Embedded,builder_app,none,2,5,,False,True,system,Sports,17.02,1,wallet-only,blue,False
+tr_0337,0x2ff97fd7d497da9a50f1887423dc446b6211c64b,2024-02-27,GB,UTC-5,de,enhanced,Embedded,friend,none,0,10,builder_alpha,False,True,light,Sports,3.18,0,nickname,blue,True
+tr_0338,0x5592fa44dc1b738870a33ac8dcb84c8f6d0ddf22,2025-10-30,US,UTC-5,en,enhanced,Coinbase Wallet,x,none,2,0,,False,False,light,Politics,16.28,0,real-name,blue,True
+tr_0339,0xe4a4c2d164b80f71bd6f30b17d9e014f3e711bb9,2024-12-18,US,UTC+8,pl,enhanced,Rabby,friend,none,4,10,,True,False,dark,Politics,14.99,1,nickname,green,False
+tr_0340,0x7a6c1a6ecfa9c081adad55013738b0e8ad8027cb,2024-11-29,AU,UTC-8,es,enhanced,Rabby,newsletter,none,2,10,builder_gamma,False,False,dark,Crypto,22.68,0,wallet-only,gray,False
+tr_0341,0x7f10b19f2eae9f47135376de0c8ab55d80aa4c2e,2024-09-05,ES,UTC-5,fr,none,MetaMask,telegram,none,2,0,,False,False,system,Politics,16.93,0,wallet-only,purple,True
+tr_0342,0xf2d60f9c8d4a0ca56b3de5be25bded60e35fface,2025-05-16,US,UTC+0,de,basic,Coinbase Wallet,newsletter,none,2,10,builder_gamma,False,False,system,Politics,13.42,1,nickname,gray,False
+tr_0343,0x2dbb9d94d830eb9cd5325175c864b3aed3815de4,2024-07-20,SG,UTC-8,es,enhanced,Embedded,x,none,4,5,,False,False,light,Politics,5.93,1,real-name,orange,False
+tr_0344,0x74f7d96f535be18177c29c7152dacc7362c6bfc6,2025-06-07,NL,UTC-8,es,basic,WalletConnect,referral_code,none,8,10,,False,True,system,Sports,1.0,1,real-name,orange,False
+tr_0345,0x725703d75cc7fc7b3743027dd8572095c68fe284,2025-12-06,DE,UTC-5,de,basic,Embedded,friend,silver,6,5,,False,True,light,Weather,11.58,0,nickname,orange,False
+tr_0346,0x0640a6371d35bf662938bd96a04e86a2bcc4508d,2025-10-08,CA,UTC+8,es,basic,MetaMask,referral_code,none,4,10,builder_gamma,False,False,system,Entertainment,10.36,0,real-name,blue,True
+tr_0347,0xc79bf5d6403a57b8e75461b0d82236d7302f21cd,2024-12-18,CA,UTC-5,de,basic,Rabby,referral_code,none,4,15,,False,True,dark,Sports,2.67,0,wallet-only,blue,False
+tr_0348,0xda79f12c2e54d68021693d2026f981f4a4d08d7e,2024-09-15,DE,UTC-5,en,basic,Coinbase Wallet,telegram,gold,4,15,,False,False,light,Politics,17.44,1,nickname,green,True
+tr_0349,0xcec1e7ceaf432d2e631c247fe039bc50e99f5b39,2025-12-07,US,UTC-5,en,basic,Embedded,telegram,gold,8,10,,False,True,light,Macro,8.08,0,wallet-only,black,True
+tr_0350,0x2bf781e1650f96266652d84f94b90b8840bfcd00,2024-01-22,US,UTC+0,pl,basic,Rabby,organic,none,0,15,builder_gamma,False,True,light,Politics,4.1,0,wallet-only,blue,False
+tr_0351,0x0b1fd92cecfe304903e5330250cec5f1e355be36,2025-11-04,GB,UTC+1,pl,none,MetaMask,discord,none,4,15,builder_beta,False,True,system,Crypto,13.19,0,real-name,black,False
+tr_0352,0x888b33c32d626085b8a1dcc1e0cc6e99f1373745,2024-06-16,IE,UTC+8,de,enhanced,Rabby,telegram,gold,8,20,builder_beta,False,True,light,Weather,8.4,0,nickname,black,False
+tr_0353,0x2e69da9e5f12613736fd45a8e41ebe67c092b84d,2024-02-27,DE,UTC+8,es,enhanced,MetaMask,builder_app,none,6,10,,False,False,light,Weather,18.92,0,wallet-only,gray,False
+tr_0354,0x43b1bd554b2913d87e727f5bd218b4c5ec9bf487,2025-11-06,SG,UTC+8,pl,basic,Rabby,referral_code,none,6,5,,False,False,system,Weather,23.98,0,wallet-only,purple,False
+tr_0355,0x6ad33329855905baf4e58cb8d8f56c2c08629243,2025-10-26,DE,UTC-8,fr,enhanced,Rabby,builder_app,none,2,5,,False,True,system,Culture,12.46,0,nickname,purple,True
+tr_0356,0xcdb192225c85ce6cf783cea1fc34499c9a6d7264,2024-02-05,SG,UTC-8,fr,enhanced,Rabby,referral_code,gold,6,10,builder_beta,False,True,dark,Crypto,6.76,0,real-name,orange,False
+tr_0357,0xd5df531da031b1353924719600fe27066ebd0fd6,2025-09-17,DE,UTC+0,fr,enhanced,MetaMask,referral_code,none,2,10,,False,True,light,Politics,20.49,1,nickname,purple,False
+tr_0358,0x38f093241dada3d360e94162315e4e327e876e0d,2024-09-01,US,UTC-8,pl,enhanced,Rabby,x,none,6,5,builder_gamma,False,False,light,Macro,18.26,0,nickname,blue,True
+tr_0359,0x344904615587fd79342e434c1735cc8649f2dc53,2024-01-23,US,UTC+1,de,enhanced,WalletConnect,telegram,none,4,15,builder_beta,False,False,light,Politics,8.61,0,wallet-only,gray,True
+tr_0360,0xd280b28b4af0585e7f264590c938464dab47f847,2025-10-04,FR,UTC+1,en,none,Coinbase Wallet,discord,none,8,10,builder_beta,False,True,light,Macro,12.09,1,nickname,green,True

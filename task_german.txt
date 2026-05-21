@@ -1,0 +1,471 @@
+
+## Ziel der Übung
+
+Die Gruppe soll untersuchen, ob auf Konto- oder Marktebene Hinweise auf Marktmanipulation, kollusives Verhalten, Spoofing oder informationsgetriebenen Missbrauch vorliegen. Die Studierenden sollen keine absolute Wahrheit beweisen, sondern belastbare Verdachtswahrscheinlichkeiten aus Datenmustern ableiten.
+
+## Datenmodell und Join-Logik
+
+Im Kern gibt es drei Ebenen. Die Marktebene besteht aus `markets.csv` und `market_daily_snapshots.csv`. Die Kontenebene besteht aus `traders.csv`, `sessions.csv`, `transfers.csv` und `account_daily_features.csv`. Die Ausführungsebene besteht aus `orders.csv` und `trades.csv`.
+
+Wichtige Schlüssel sind `market_id`, `trader_id`, `order_id` und `trade_id`. `orders.csv` verbindet Konten mit Märkten. `trades.csv` verbindet Käufer, Verkäufer und die zugrunde liegenden Orders. `sessions.csv` und `transfers.csv` liefern Infrastruktur- und Geldflussmuster. `account_daily_features.csv` enthält bereits voraggregierte Verdachtsmerkmale auf Tagesbasis und eignet sich sehr gut für einen ersten Risk Score.
+
+## Mehrstufige Übung mit 5 Aufgaben
+
+### Aufgabe 1: Datenverständnis, Datenqualität und Beziehungsmodell
+Die Studierenden laden alle CSV-Dateien in Pandas, prüfen Datentypen, Zeitzusammenhänge und Primärschlüssel und erstellen ein kleines Datenmodell. Sie sollen kontrollieren, ob `order_id`, `trade_id`, `market_id` und `trader_id` eindeutig sind, welche Fremdschlüssel wo referenziert werden und welche Felder zeitlich konsistent sein müssen, etwa `created_at <= updated_at` oder `session_start <= session_end`.
+
+Erwartetes Lernziel ist, dass die Gruppe erkennt, dass man einen Fraud-Fall nicht aus einer einzigen Tabelle ableitet. Verdacht entsteht erst durch das Zusammenspiel von Marktbewegung, Orderverhalten, Gegenparteien, technischer Infrastruktur und Geldflüssen.
+
+Konkrete Arbeitsaufträge: Erstens einen Join-Plan skizzieren. Zweitens fehlende Werte und Dubletten prüfen. Drittens die wichtigsten Zeitfelder in echte Datetime-Felder umwandeln. Viertens markieren, welche Felder vermutlich stark relevant, schwach relevant oder irrelevantes Rauschen sind.
+
+### Aufgabe 2: Explorative Analyse von Markt- und Ordermustern
+Die Studierenden analysieren, welche Märkte ungewöhnliche Preis- und Aktivitätsmuster aufweisen. Dafür kombinieren sie `market_daily_snapshots.csv`, `orders.csv` und `trades.csv`. Gesucht sind Märkte mit starken Preisbewegungen bei gleichzeitig geringer Zahl unterschiedlicher Käufer oder Verkäufer, mit hohen Stornoquoten, mit starker Konzentration auf wenige Accounts oder mit besonders aggressiven Trades kurz vor `close_time`.
+
+Erwartetes Lernziel ist das Verständnis typischer Manipulationsmuster auf Marktebene. Ein Markt ist verdächtig, wenn Preisbewegung und Marktbreite nicht zusammenpassen. Ein starker Preisanstieg bei sehr wenigen Teilnehmern oder bei hoher Stornointensität ist wesentlich auffälliger als dieselbe Preisbewegung in einem breiten, aktiven Markt.
+
+Konkrete Arbeitsaufträge: Preiszeitreihen je Markt zeichnen, tägliche Handelsaktivität und Preisänderung vergleichen, Cancel-Rates je Markt berechnen, Verteilung der Gegenparteien untersuchen und eine Top-10-Liste verdächtiger Märkte begründet auswählen.
+
+### Aufgabe 3: Kontoebene und Infrastruktur-Cluster
+Nun wechseln die Studierenden auf Kontoebene. Sie untersuchen, ob mehrere Konten technisch oder finanziell miteinander verbunden sind. Dazu werden `traders.csv`, `sessions.csv`, `transfers.csv` und `account_daily_features.csv` genutzt. Besonders wichtig sind gemeinsame `device_id`, gleiche `device_fingerprint_hash`, gleiche IPs oder ASN-Muster, hohe `vpn_share` oder `tor_share` sowie geteilte Auszahlungsadressen.
+
+Erwartetes Lernziel ist, dass Betrug oft kein Einzelkonto-Problem ist, sondern clusterartig auftritt. Mehrere Konten können formal verschieden aussehen, aber dieselbe technische Infrastruktur oder dieselben Cashout-Wege nutzen.
+
+Konkrete Arbeitsaufträge: Netzwerk aus Konten bauen, wenn sie Geräte, Fingerprints, IPs oder Auszahlungsadressen teilen. Danach Clustergrößen, Dichte und interne Handelsanteile beschreiben. Abschließend die drei verdächtigsten Cluster identifizieren.
+
+### Aufgabe 4: Heuristischer Fraud Score
+Die Studierenden entwickeln jetzt einen transparenten Risk Score. Der Score soll keine Blackbox sein, sondern aus klar interpretierbaren Merkmalen bestehen. Geeignet sind etwa hohe `cancel_count`, niedrige `fill_ratio_mean`, hohe `top_counterparty_trade_share`, hohe `shared_device_session_share`, hohe `shared_fp_session_share`, hohe `shared_withdraw_addr_share`, hohe `api_order_share` und hohe `self_trade_count`.
+
+Erwartetes Lernziel ist, dass gute Fraud-Analytik nicht zuerst mit komplexen Modellen startet. Ein sauber begründeter, nachvollziehbarer Score ist für ein Seminar didaktisch wertvoller als sofortiges Machine Learning. Die Gruppe soll Gewichte argumentieren und anschließend prüfen, welche Accounts oder Märkte durch den Score oben landen.
+
+Konkrete Arbeitsaufträge: Features standardisieren, Gewichtung dokumentieren, einen Konto-Score und optional einen Markt-Score bauen und die Top-Fälle textlich begründen. Wer möchte, kann den mitgelieferten `starter_analysis.py` als Ausgangspunkt erweitern.
+
+### Aufgabe 5: Interpretation, Gegenhypothesen und Management-Summary
+Im letzten Schritt verfassen die Studierenden eine kurze Ergebnisinterpretation. Sie sollen bewusst zwischen Verdacht und Beweis unterscheiden. Für jeden Top-Fall müssen sie eine Gegenhypothese formulieren, etwa echte News, geringe Marktliquidität, legitime API-Nutzung oder marketingbedingte Traffic-Spitzen. Danach verfassen sie eine kurze Management-Summary mit drei bis fünf wichtigsten Verdachtsfällen und einer nachvollziehbaren Begründung.
+
+Erwartetes Lernziel ist analytische Reife. Ein gutes Fraud-Ergebnis benennt nicht nur Verdachtsmuster, sondern auch Grenzen, Unsicherheiten und alternative Erklärungen.
+
+## Didaktischer Hinweis für die Durchführung
+
+Eine gute Reihenfolge im Seminar ist: zuerst Tabellen verstehen, dann einfache deskriptive Kennzahlen berechnen, danach Cluster und Marktmuster untersuchen und erst zum Schluss einen zusammengesetzten Score bauen. So lernen die Studierenden, dass Fraud Detection aus Hypothesenbildung, Datenverständnis und Plausibilisierung besteht.
+
+## Saubere Erklärung der einzelnen Datenfelder
+
+Im Folgenden sind alle Felder aus den studentischen Dateien einzeln erklärt. Die Relevanz bezieht sich darauf, wie nützlich das Feld typischerweise für die Verdachtsanalyse ist.
+
+### markets.csv
+
+`market_id`: Eindeutiger Primärschlüssel des Marktes. Über dieses Feld werden Orders, Trades und Tagessnapshots einem Markt zugeordnet. Relevanz: hoch.
+
+`event_id`: Eindeutiger Schlüssel des zugrunde liegenden Ereignisses. Kann zur Verbindung mehrerer Marktobjekte desselben Events genutzt werden. Relevanz: mittel.
+
+`question`: Klartextfrage des Marktes. Zeigt, worauf genau gewettet wird und hilft beim fachlichen Verständnis. Relevanz: mittel.
+
+`category`: Oberkategorie des Marktes, zum Beispiel Tech oder Politics. Eher Kontext als Fraud-Signal. Relevanz: niedrig.
+
+`subcategory`: Feinere inhaltliche Kategorie innerhalb der Oberkategorie. Relevanz: niedrig.
+
+`created_at`: Zeitpunkt der Markteröffnung bzw. Anlage des Marktes. Nützlich für die Berechnung der Marktlebensdauer. Relevanz: mittel.
+
+`close_time`: Zeitpunkt, zu dem der Markt für neue Orders schließt. Sehr wichtig für Analysen von Aktivität kurz vor Marktschluss. Relevanz: hoch.
+
+`resolve_time`: Zeitpunkt der offiziellen Auflösung des Marktes. Hilft bei der Trennung von Pre-Resolution- und Post-Resolution-Phasen. Relevanz: mittel.
+
+`initial_yes_price`: Startpreis der YES-Seite. Dient als Ausgangsniveau für Preisbewegungsanalysen. Relevanz: mittel.
+
+`tick_size`: Kleinste zulässige Preisänderung. Wichtig, um zu erkennen, ob Preisbewegungen marktmechanisch plausibel sind. Relevanz: mittel.
+
+`max_incentive_spread_bps`: Maximaler Spread in Basispunkten, der noch für Incentives relevant ist. Kontext zur Liquiditätsstruktur. Relevanz: niedrig.
+
+`liquidity_usdc_seeded`: Initial bereitgestellte Liquidität in USDC. Höhere Anfangsliquidität erschwert Manipulation tendenziell. Relevanz: hoch.
+
+`fee_bps`: Handelsgebühr in Basispunkten. Relevanter Kontext für Handelsverhalten und Mikrostruktur. Relevanz: niedrig.
+
+`market_type`: Markttyp, hier typischerweise binary. Wichtig für die richtige Interpretation des Preisraums. Relevanz: mittel.
+
+`outcome_yes_token_id`: Technische Token-ID für die YES-Seite. Für Seminaranalysen meist nicht relevant. Relevanz: niedrig.
+
+`outcome_no_token_id`: Technische Token-ID für die NO-Seite. Für Seminaranalysen meist nicht relevant. Relevanz: niedrig.
+
+`builder_rewards_enabled`: Kennzeichnet, ob Builder-Rewards aktiv sind. Kann Verhalten über Anreizsysteme beeinflussen. Relevanz: niedrig.
+
+`featured_flag`: Ob der Markt prominent auf der Plattform hervorgehoben wurde. Kann Volumen und Sichtbarkeit künstlich erhöhen. Relevanz: mittel.
+
+`tag_primary`: Erstes Tag oder Schlagwort des Marktes. Nur Kontext. Relevanz: niedrig.
+
+`tag_secondary`: Zweites Tag oder Schlagwort des Marktes. Nur Kontext. Relevanz: niedrig.
+
+`timezone_hint`: Hinweis auf die verwendete Zeitzone. Relevant für saubere Zeitinterpretation. Relevanz: mittel.
+
+`editorial_priority_score`: Interner Prioritätsscore für redaktionelle Hervorhebung. Kann Traffic beeinflussen, ist aber kein direktes Fraud-Signal. Relevanz: niedrig.
+
+`thumbnail_theme`: Layout- oder Designattribut des Marktbildes. Typisch irrelevantes Realweltfeld. Relevanz: irrelevant.
+
+`internal_note_stub`: Künstlicher interner Notizstub. Für Analysezwecke unwichtig, zeigt aber reale Datensatz-Unordnung. Relevanz: irrelevant.
+
+### traders.csv
+
+`trader_id`: Eindeutiger Primärschlüssel des Kontos. Zentraler Join-Schlüssel für alle accountbezogenen Tabellen. Relevanz: hoch.
+
+`wallet_address`: Wallet-Adresse des Kontos. Kann für Cluster- und Identitätsanalysen genutzt werden, sofern es Überschneidungen gibt. Relevanz: hoch.
+
+`signup_ts`: Registrierungszeitpunkt des Kontos. Neue Konten sind bei Missbrauchsszenarien oft auffälliger. Relevanz: hoch.
+
+`home_country`: Herkunftsland des Nutzers laut Profil. Nur eingeschränkt vertrauenswürdig, aber nützlich als Kontext. Relevanz: mittel.
+
+`time_zone`: Zeitzone des Profils. Kann mit tatsächlichem Handelszeitpunkt verglichen werden. Relevanz: niedrig.
+
+`preferred_language`: Bevorzugte Sprache im Frontend. Relevanz: niedrig.
+
+`kyc_tier`: Identitätsprüfungsstufe des Kontos. Niedrige oder fehlende KYC-Stufen können Risiko erhöhen. Relevanz: hoch.
+
+`wallet_provider`: Art des Wallet-Anbieters oder Custody-Modells. Relevanz: mittel.
+
+`referral_source`: Akquisekanal des Kontos. Kann bei auffälligen Clusterbildungen relevant sein. Relevanz: niedrig.
+
+`vip_tier`: VIP-Status. Meist eher verhaltens- oder gebührenrelevant. Relevanz: niedrig.
+
+`maker_fee_bps`: Maker-Gebühr des Kontos in Basispunkten. Relevanter Kontext für Orderverhalten. Relevanz: niedrig.
+
+`taker_fee_bps`: Taker-Gebühr des Kontos in Basispunkten. Relevanter Kontext für aggressives Trading. Relevanz: niedrig.
+
+`builder_code_seen`: Zuletzt oder häufig gesehenes Builder- oder Affiliate-Kennzeichen. Kann bei koordinierten Clustern helfen. Relevanz: mittel.
+
+`risk_country_flag`: Binärer Flag für ein aus Sicht des Systems riskantes Land. Kein Beweis, aber ein Compliance-Signal. Relevanz: mittel.
+
+`marketing_opt_in`: Hat keinerlei inhaltliche Relevanz für Fraud-Detection, ist aber typisch für reale Nutzerdaten. Relevanz: irrelevant.
+
+`ui_theme`: Gewähltes App-Theme. Reines Rauschen. Relevanz: irrelevant.
+
+`favorite_category`: Lieblingskategorie des Nutzers. Kann Nutzungsinteresse anzeigen, ist aber für Betrug meist schwach. Relevanz: niedrig.
+
+`avg_session_length_min_prior_30d`: Durchschnittliche Sitzungsdauer der letzten 30 Tage. Kann zwischen Bot-artigem und normalem Verhalten unterscheiden helfen. Relevanz: mittel.
+
+`support_tickets_prior_90d`: Zahl der Supportfälle. Eher schwaches Hilfsmerkmal. Relevanz: niedrig.
+
+`screen_name_style`: Stil des Anzeigenamens. Praktisch irrelevant. Relevanz: irrelevant.
+
+`avatar_color`: Farbe des Avatars. Praktisch irrelevant. Relevanz: irrelevant.
+
+`price_alerts_enabled`: Ob Preisalarme aktiv sind. Kann Aktivität erklären, ist aber kein direkter Fraud-Indikator. Relevanz: niedrig.
+
+### sessions.csv
+
+`session_id`: Eindeutiger Schlüssel einer einzelnen Nutzungssitzung. Relevanz: hoch.
+
+`trader_id`: Verweis auf das zugehörige Konto. Relevanz: hoch.
+
+`session_start`: Beginn der Sitzung. Zentral für Zeitmuster und Sessiondauer. Relevanz: hoch.
+
+`session_end`: Ende der Sitzung. Zusammen mit session_start wichtig für Dauer und Aktivitätsfenster. Relevanz: hoch.
+
+`device_id`: Gerätekennung. Mehrere Konten auf derselben device_id sind verdächtig. Relevanz: hoch.
+
+`device_fingerprint_hash`: Hash eines Browser- oder Gerätefingerprints. Noch stärker für Clusterbildung als bloße device_id. Relevanz: hoch.
+
+`device_type`: Gerätetyp wie mobile oder desktop. Eher Kontext. Relevanz: niedrig.
+
+`os_name`: Betriebssystem des Geräts. Zusammen mit anderen Merkmalen für Profiling nutzbar. Relevanz: niedrig.
+
+`browser_family`: Browserfamilie. Nur in Kombination mit Fingerprints interessant. Relevanz: niedrig.
+
+`app_version`: Verwendete App- oder Web-Version. Kann technische Cluster aufzeigen. Relevanz: niedrig.
+
+`ip_address`: Öffentliche IP-Adresse. Sehr wichtig für Mehrkonto- und Infrastruktur-Analysen. Relevanz: hoch.
+
+`ip_asn`: Netzbetreiber bzw. autonomes System der IP. Hilft bei Erkennung von Hosting- oder Rechenzentrumsnutzung. Relevanz: mittel.
+
+`ip_country`: Land der IP-Geolokation. Kann vom Profil-Land abweichen. Relevanz: mittel.
+
+`vpn_detected`: Flag, ob eine VPN-Nutzung erkannt wurde. Relevanz: hoch.
+
+`tor_exit_detected`: Flag, ob ein Tor-Exit-Node erkannt wurde. Starkes Risiko- und Verschleierungssignal. Relevanz: hoch.
+
+`cookie_age_days`: Alter des Cookies in Tagen. Sehr junge Cookies bei hoher Aktivität können auffällig sein. Relevanz: mittel.
+
+`pageviews`: Anzahl gesehener Seiten in der Sitzung. Relevanz eher verhaltensbezogen. Relevanz: niedrig.
+
+`avg_scroll_depth_pct`: Durchschnittliche Scrolltiefe. Typisches Produktanalysefeld, für Fraud meist schwach. Relevanz: irrelevant.
+
+`battery_pct_at_open`: Akkustand bei Sitzungsbeginn. Reines Rauschen. Relevanz: irrelevant.
+
+`screen_resolution`: Bildschirmauflösung. Nur zur Fingerprint-Anreicherung denkbar. Relevanz: niedrig.
+
+`locale_header`: Sprach- oder Locale-Header des Clients. Relevanz: niedrig.
+
+`ab_test_bucket`: A/B-Test-Gruppe. Für Fraud in der Regel irrelevant. Relevanz: irrelevant.
+
+`push_permission`: Status von Push-Benachrichtigungen. Reines Produktfeld. Relevanz: irrelevant.
+
+`date`: Abgeleitetes Kalendertag-Feld der Sitzung. Gut für Daily Aggregations. Relevanz: mittel.
+
+### orders.csv
+
+`order_id`: Eindeutiger Primärschlüssel der Order. Relevanz: hoch.
+
+`trader_id`: Konto, das die Order aufgegeben hat. Relevanz: hoch.
+
+`market_id`: Markt, in dem die Order platziert wurde. Relevanz: hoch.
+
+`event_id`: Event-Referenz der Order. Kann redundante Marktinformation enthalten. Relevanz: niedrig.
+
+`outcome`: Seite der Wette, also YES oder NO. Relevanz: hoch.
+
+`side`: Handelsrichtung BUY oder SELL. Für Mikrostruktur und Intentionsanalyse wichtig. Relevanz: hoch.
+
+`order_type`: Typ der Order, etwa LIMIT. Wichtig für die richtige Interpretation der Preislogik. Relevanz: mittel.
+
+`time_in_force`: Gültigkeitsdauer der Order, etwa GTC, IOC oder FAK. Besonders relevant bei Spoofing-Mustern. Relevanz: hoch.
+
+`post_only`: Ob die Order nur als Maker ins Buch gelegt werden darf. Hilft, echtes Liquiditätsstellen von aggressiven Orders zu trennen. Relevanz: mittel.
+
+`created_at`: Zeitpunkt der Auftragserstellung. Zentral für zeitliche Muster. Relevanz: hoch.
+
+`updated_at`: Zeitpunkt der letzten Änderung oder des Endstatus. Wichtig für Orderlebensdauer. Relevanz: hoch.
+
+`price`: Orderpreis pro Anteil. Kernvariable für Manipulations- und Price-Impact-Analysen. Relevanz: hoch.
+
+`size_shares`: Ursprüngliche Ordergröße in Anteilen. Relevanz: hoch.
+
+`matched_size_shares`: Tatsächlich ausgeführter Teil der Order. Relevanz: hoch.
+
+`remaining_size_shares`: Nicht ausgeführter Rest der Order. Relevanz: hoch.
+
+`status`: Endstatus der Order, etwa FILLED, PARTIAL, CANCELED oder EXPIRED. Relevanz: hoch.
+
+`cancel_reason`: Grund der Stornierung. Sehr wichtig, um manuelle, systemische oder taktische Stornos zu unterscheiden. Relevanz: hoch.
+
+`quote_age_ms`: Alter der Marktquote zum Zeitpunkt der Order in Millisekunden. Kann technische und taktische Muster zeigen. Relevanz: mittel.
+
+`client_latency_ms`: Latenz vom Client zur Plattform. Kann API-Automation oder technische Cluster stützen. Relevanz: mittel.
+
+`midpoint_before`: Mid-Preis direkt vor Abgabe der Order. Dient zur Messung, wie aggressiv der Orderpreis war. Relevanz: hoch.
+
+`orderbook_imbalance_before`: Ungleichgewicht des Orderbuchs vor Orderaufgabe. Nützlich zur Einordnung, ob jemand gegen das Buch handelt. Relevanz: hoch.
+
+`spread_before_bps`: Spread vor Orderaufgabe in Basispunkten. Relevant für Liquiditäts- und Impact-Analysen. Relevanz: hoch.
+
+`builder_code`: Builder- oder Integrationscode, über den die Order kam. Sehr hilfreich für Cluster über mehrere Konten. Relevanz: hoch.
+
+`ui_entrypoint`: Konkreter Einstiegspunkt im Frontend oder Widget. Hilft, Traffic-Quellen zu unterscheiden. Relevanz: mittel.
+
+`signature_scheme`: Technisches Signaturverfahren. Für Fraud meist nur technischer Kontext. Relevanz: niedrig.
+
+`scoring_status`: Interner Scoring- oder Prüfstatus beim Eingang der Order. Relevanz: mittel.
+
+`replace_count_15m`: Wie oft die Order im letzten 15-Minuten-Fenster ersetzt oder angepasst wurde. Klassisches Spoofing-Merkmal. Relevanz: hoch.
+
+`cancel_count_15m`: Wie oft im letzten 15-Minuten-Fenster storniert wurde. Klassisches Spoofing-Merkmal. Relevanz: hoch.
+
+`account_age_days`: Alter des Kontos zum Orderzeitpunkt. Junge Konten mit aggressivem Verhalten sind oft auffällig. Relevanz: hoch.
+
+`wallet_balance_before_usdc`: Wallet-Bestand vor Orderaufgabe. Dient zur Plausibilisierung von Ordergrößen. Relevanz: mittel.
+
+`is_api_order`: Kennzeichnet API-basierte Orders. Für automatisierte Manipulationsmuster sehr relevant. Relevanz: hoch.
+
+`price_alert_active`: Ob beim Nutzer ein Preisalarm aktiv war. Eher schwaches Kontextfeld. Relevanz: niedrig.
+
+`coupon_banner_seen`: Ob ein Werbebanner gesehen wurde. Praktisch irrelevant. Relevanz: irrelevant.
+
+`date`: Kalendertag der Order. Nützlich für Tagesaggregation. Relevanz: mittel.
+
+### trades.csv
+
+`trade_id`: Eindeutiger Primärschlüssel des ausgeführten Trades. Relevanz: hoch.
+
+`market_id`: Markt, in dem der Trade stattfand. Relevanz: hoch.
+
+`event_id`: Event-Referenz des Trades. Relevanz: niedrig.
+
+`trade_ts`: Exakter Ausführungszeitpunkt des Trades. Relevanz: hoch.
+
+`buyer_trader_id`: Konto auf der Käuferseite. Relevanz: hoch.
+
+`seller_trader_id`: Konto auf der Verkäuferseite. Relevanz: hoch.
+
+`buy_order_id`: Order-ID der Kauforder. Relevanz: hoch.
+
+`sell_order_id`: Order-ID der Verkaufsorder. Relevanz: hoch.
+
+`outcome`: Gehandeltes Outcome, also YES oder NO. Relevanz: hoch.
+
+`price`: Ausführungspreis des Trades. Relevanz: hoch.
+
+`size_shares`: Gehandelte Stückzahl. Relevanz: hoch.
+
+`notional_usdc`: Dollar-Volumen des Trades. Preis mal Stückzahl. Relevanz: hoch.
+
+`aggressor_side`: Seite, die den Trade aktiv ausgelöst hat. Wichtig für Directionality und Impact. Relevanz: hoch.
+
+`buyer_fee_usdc`: Gebühr des Käufers. Relevanz: niedrig.
+
+`seller_fee_usdc`: Gebühr des Verkäufers. Relevanz: niedrig.
+
+`spread_at_trade_bps`: Spread im Moment des Trades. Zeigt, wie liquide der Markt gerade war. Relevanz: hoch.
+
+`midpoint_before`: Mid-Preis direkt vor dem Trade. Relevanz: hoch.
+
+`midpoint_after`: Mid-Preis direkt nach dem Trade. Zentral für Price-Impact-Messung. Relevanz: hoch.
+
+`signed_price_change_bps`: Vorzeichenbehaftete Preisänderung in Basispunkten. Sehr wichtig für Ramping und Informationsmuster. Relevanz: hoch.
+
+`onchain_settlement_delay_s`: Verzögerung bis zur Onchain-Abwicklung in Sekunden. Relevanz: niedrig.
+
+`match_engine_latency_ms`: Matching-Latenz des Systems. Kann bei technischen Clustern helfen. Relevanz: niedrig.
+
+`is_self_trade_flag`: Flag für Selbsthandel oder sehr direkte Eigenausführung. Stark verdächtig. Relevanz: hoch.
+
+`same_builder_code_flag`: Ob beide Seiten über denselben Builder-Kontext kamen. Hilfreich für Kollusionshinweise. Relevanz: hoch.
+
+`price_improvement_bps`: Preisverbesserung gegenüber dem sichtbaren Buch. Eher Mikrostruktur als Fraud an sich. Relevanz: mittel.
+
+`queue_position_estimate`: Geschätzte Reihenposition im Orderbuch. Fortgeschrittenes Mikrostrukturmerkmal. Relevanz: niedrig.
+
+`seq_num`: Technische laufende Sequenznummer. Gut für zeitliche Sortierung und Konsistenzchecks. Relevanz: mittel.
+
+`trade_date`: Kalendertag des Trades. Relevanz: mittel.
+
+### transfers.csv
+
+`transfer_id`: Eindeutiger Primärschlüssel der Geldbewegung. Relevanz: hoch.
+
+`trader_id`: Konto, zu dem die Ein- oder Auszahlung gehört. Relevanz: hoch.
+
+`ts`: Zeitpunkt des Transfers. Relevanz: hoch.
+
+`direction`: deposit oder withdrawal. Zentral für Funding- und Cashout-Muster. Relevanz: hoch.
+
+`asset`: Transferiertes Asset, meist USDC. Relevanz: mittel.
+
+`network`: Blockchain- oder Zahlungsnetzwerk. Relevanz: mittel.
+
+`amount_usd`: Transferbetrag in USD. Sehr wichtig für Funding-Muster. Relevanz: hoch.
+
+`bridge_provider`: Brücken- oder Transferanbieter. Kann technische Cluster zeigen. Relevanz: mittel.
+
+`source_or_destination_address`: Herkunfts- oder Zieladresse. Mehrere Konten mit derselben Zieladresse sind stark verdächtig. Relevanz: hoch.
+
+`gas_fee_usd`: Transaktionsgebühr. Für Fraud meist eher Kontext. Relevanz: niedrig.
+
+`time_to_credit_s`: Zeit bis zur Gutschrift. Eher operatives Prozessfeld. Relevanz: niedrig.
+
+`payment_rail`: Zahlungsweg wie chain, card oder bank. Relevanz: mittel.
+
+`card_bin_country`: Land der Karten-BIN. Bei card-Zahlungen nützlich für Geografie-Checks. Relevanz: mittel.
+
+`chargeback_flag`: Rückbelastungsflag. Klassisches Risiko- und Missbrauchssignal. Relevanz: hoch.
+
+`aml_screen_hit`: Treffer in AML-Prüfungen. Starkes Compliance-Signal. Relevanz: hoch.
+
+`travel_rule_required`: Ob regulatorische Travel-Rule-Pflicht greift. Eher Compliance-Kontext. Relevanz: niedrig.
+
+`memo_field_length`: Länge des Memo-Feldes. Praktisch meist Rauschen. Relevanz: irrelevant.
+
+`deposit_campaign_code`: Kampagnencode des Deposits. Marketing- oder Bonuskontext, meist kein direktes Fraud-Signal. Relevanz: niedrig.
+
+`date`: Kalendertag des Transfers. Relevanz: mittel.
+
+### market_daily_snapshots.csv
+
+`market_id`: Markt, auf den sich der Tagessnapshot bezieht. Relevanz: hoch.
+
+`trade_date`: Kalendertag des Snapshots. Relevanz: hoch.
+
+`last_price`: Letzter beobachteter Preis des Tages. Zentrale Zeitreihe für Marktanalysen. Relevanz: hoch.
+
+`volume_shares`: Gehandeltes Stückvolumen am Tag. Relevanz: hoch.
+
+`volume_usdc`: Gehandeltes Dollarvolumen am Tag. Relevanz: hoch.
+
+`trade_count`: Anzahl der Trades am Tag. Hohe Aktivität bei engem Counterparty-Kreis kann verdächtig sein. Relevanz: hoch.
+
+`avg_spread_bps`: Durchschnittlicher Spread am Tag. Enger oder plötzlich breiter Spread kann Marktqualität anzeigen. Relevanz: hoch.
+
+`unique_buyers`: Anzahl unterschiedlicher Käufer am Tag. Relevanz: hoch.
+
+`unique_sellers`: Anzahl unterschiedlicher Verkäufer am Tag. Relevanz: hoch.
+
+`price_change_bps_sum`: Aggregierte Preisänderung über den Tag in Basispunkten. Relevanz: hoch.
+
+`order_imbalance_proxy`: Näherung für Nachfrage- oder Angebotsüberhang. Relevanz: hoch.
+
+`social_mentions_1h`: Externe Social-Media-Erwähnungen. Kann echte Informationsereignisse erklären. Relevanz: mittel.
+
+`news_sentiment_score`: Stimmungsscore externer News. Kann Preisbewegungen ohne Betrug plausibilisieren. Relevanz: mittel.
+
+`bot_comment_ratio`: Anteil botartiger Kommentare. Potenziell nützlich für Hype- oder Manipulationsumfelder. Relevanz: mittel.
+
+`weather_temp_c`: Wettertemperatur. Absichtlich irrelevantes Feld. Relevanz: irrelevant.
+
+`promo_banner_impressions`: Zahl von Werbeeinblendungen. Kann Traffic erklären, ist aber für Betrug meist nebensächlich. Relevanz: niedrig.
+
+`emoji_reaction_count`: Anzahl von Reaktionen im Produkt. Typisches Nebengeräusch. Relevanz: irrelevant.
+
+### account_daily_features.csv
+
+`trader_id`: Konto, für das die Tagesmerkmale aggregiert wurden. Relevanz: hoch.
+
+`date`: Kalendertag der Aggregation. Relevanz: hoch.
+
+`orders_placed`: Anzahl platzierter Orders am Tag. Relevanz: hoch.
+
+`cancel_count`: Anzahl stornierter Orders am Tag. Kernsignal für Spoofing. Relevanz: hoch.
+
+`expired_count`: Anzahl abgelaufener Orders. Kann auf passives Quote-Stellen hinweisen. Relevanz: mittel.
+
+`mean_order_size`: Durchschnittliche Ordergröße am Tag. Relevanz: hoch.
+
+`max_order_size`: Größte Einzelorder am Tag. Relevanz: hoch.
+
+`mean_replace_count_15m`: Durchschnittliche Zahl von Order-Anpassungen im 15-Minuten-Fenster. Relevanz: hoch.
+
+`mean_cancel_count_15m`: Durchschnittliche Zahl von Stornos im 15-Minuten-Fenster. Relevanz: hoch.
+
+`api_order_share`: Anteil API-basierter Orders am Tagesaufkommen. Relevanz: hoch.
+
+`fill_ratio_mean`: Durchschnittlicher Ausführungsanteil der Orders. Sehr niedrige Werte bei hoher Aktivität sind verdächtig. Relevanz: hoch.
+
+`buy_trades`: Anzahl Käufe am Tag. Relevanz: mittel.
+
+`buy_volume_usdc`: Kaufvolumen in USDC am Tag. Relevanz: mittel.
+
+`sell_trades`: Anzahl Verkäufe am Tag. Relevanz: mittel.
+
+`sell_volume_usdc`: Verkaufsvolumen in USDC am Tag. Relevanz: mittel.
+
+`sessions_count`: Anzahl Sessions des Kontos am Tag. Relevanz: mittel.
+
+`distinct_devices`: Anzahl unterschiedlicher Geräte am Tag. Viele Geräte können auffällig sein. Relevanz: hoch.
+
+`distinct_ips`: Anzahl unterschiedlicher IP-Adressen am Tag. Relevanz: hoch.
+
+`vpn_share`: Anteil der Sessions mit VPN am Tag. Relevanz: hoch.
+
+`tor_share`: Anteil der Sessions mit Tor am Tag. Relevanz: hoch.
+
+`same_fp_repeat`: Wiederholungsmaß eines identischen Fingerprints. Kann auf stark automatisierte Nutzung hindeuten. Relevanz: hoch.
+
+`deposits_usd`: Summe der Einzahlungen des Tages. Relevanz: hoch.
+
+`withdrawals_usd`: Summe der Auszahlungen des Tages. Relevanz: hoch.
+
+`top_counterparty_trade_share`: Anteil des Handelsvolumens mit der wichtigsten Gegenpartei. Sehr hohe Werte deuten auf Kollusion. Relevanz: hoch.
+
+`self_trade_count`: Anzahl markierter Selbsthandelsereignisse am Tag. Relevanz: hoch.
+
+`shared_device_session_share`: Anteil der Sessions auf Geräten, die auch von anderen Konten genutzt wurden. Relevanz: hoch.
+
+`shared_fp_session_share`: Anteil der Sessions mit Fingerprints, die auch andere Konten nutzen. Relevanz: hoch.
+
+`shared_withdraw_addr_share`: Anteil der Auszahlungen an Adressen, die mit anderen Konten geteilt werden. Relevanz: hoch.
+
+## Typische Muster, nach denen die Studierenden suchen sollten
+
+Ein kollusives Muster liegt vor, wenn wenige Konten wiederholt miteinander handeln, dieselbe Infrastruktur nutzen und gleichzeitig einen ungewöhnlich hohen Anteil ihres Volumens mit nur einer Gegenpartei abwickeln. Ein Spoofing-Muster liegt vor, wenn ein Konto viele große Orders stellt, sie aber nur minimal ausführen lässt und schnell wieder storniert. Ein informationsgetriebenes Muster liegt vor, wenn kurz vor Marktschluss oder vor starken Preisbewegungen einzelne Konten wiederholt richtig positioniert sind und dabei nur wenige Gegenparteien vorkommen.
+
+## Kleine Python-Hinweise für den Start
+
+Sinnvolle erste Kennzahlen sind `fill_ratio = matched_size_shares / size_shares`, `cancel_to_order_ratio = cancel_count / orders_placed`, `counterparty_concentration = top_counterparty_trade_share`, `shared_infra_score = shared_device_session_share + shared_fp_session_share + shared_withdraw_addr_share` und `near_close_minutes = (close_time - trade_ts).dt.total_seconds() / 60`.
+
+## Erwartete Abgabeform der Studierenden
+
+Empfehlenswert sind ein kurzes Notebook oder Python-Skript, zwei bis vier aussagekräftige Grafiken, eine Tabelle der Top-Verdachtsfälle auf Konto- und Marktebene und eine einseitige Ergebniszusammenfassung mit Begründung und Gegenhypothesen.

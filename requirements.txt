@@ -1,0 +1,14 @@
+# Core data analysis
+pandas>=2.0,<3
+numpy>=1.24,<3
+
+# Visualization
+matplotlib>=3.7,<4
+seaborn>=0.13,<1
+
+# Account clustering (Task 3)
+networkx>=3.1,<4
+
+# Notebook workflow (recommended deliverable)
+jupyter>=1.0,<2
+ipykernel>=6.25,<7

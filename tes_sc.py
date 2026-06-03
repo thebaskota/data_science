@@ -89,6 +89,8 @@ CANDIDATE_VOCAB: dict[str, set[str]] = {
 }
 
 DATE_RE = re.compile(r"\b\d{2}[.\-/]\d{2}[.\-/]\d{4}\b")
+# A line that begins with a date (a date table cell, e.g. "09.11.2017").
+DATE_AT_START_RE = re.compile(r"^\d{2}[.\-/]\d{2}[.\-/]\d{4}\b")
 # A label is the leading word(s) on a line that come right before a date.
 LABEL_BEFORE_DATE_RE = re.compile(
     r"^([A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß ./-]{0,40}?)\s+\d{2}[.\-/]\d{2}[.\-/]\d{4}\b"
@@ -96,6 +98,9 @@ LABEL_BEFORE_DATE_RE = re.compile(
 # "Label: value" style (e.g. "Author: J. Doe", "Geprüft von: ...").
 LABEL_COLON_RE = re.compile(r"^([A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß ./-]{0,40}?)\s*:\s*\S")
 WORD_RE = re.compile(r"[A-Za-zÄÖÜäöüß]+")
+# A label sitting alone on its own line (the table/vertical layout, where the
+# date and name land on the following lines). No digits, short, few words.
+LABEL_LINE_RE = re.compile(r"^[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß ./-]{0,38}$")
 
 
 @dataclass
@@ -111,6 +116,8 @@ class Aggregate:
     vocab_hits: dict[str, Counter[str]] = field(
         default_factory=lambda: defaultdict(Counter)
     )
+    # how labels were laid out in the text: "inline" vs "table"
+    layout_counts: Counter[str] = field(default_factory=Counter)
 
 
 def normalize_label(raw: str) -> str:
@@ -126,6 +133,15 @@ def is_known(label: str) -> bool:
     if label in ALL_KNOWN:
         return True
     return first_word(label) in ALL_KNOWN
+
+
+def is_label_like(line: str) -> bool:
+    """A short, digit-free line of 1-4 words, e.g. a lone 'Erstellt' table cell."""
+    if any(ch.isdigit() for ch in line):
+        return False
+    if not LABEL_LINE_RE.match(line):
+        return False
+    return len(line.split()) <= 4
 
 
 def read_pages(file_path: Path, max_pages: int) -> list[str]:
@@ -157,6 +173,19 @@ def scan_file(file_path: Path, max_pages: int, agg: Aggregate) -> None:
     agg.pdf_count += 1
     found_known = False
 
+    def record(label_raw: str, example: str, method: str) -> None:
+        nonlocal found_known
+        label = normalize_label(label_raw)
+        if not label or not WORD_RE.search(label):
+            return
+        agg.label_counts[label] += 1
+        agg.layout_counts[method] += 1
+        if is_known(label):
+            found_known = True
+        examples = agg.label_examples[label]
+        if len(examples) < 3 and example not in examples:
+            examples.append(example)
+
     for page_text in pages:
         lowered = page_text.lower()
 
@@ -166,26 +195,41 @@ def scan_file(file_path: Path, max_pages: int, agg: Aggregate) -> None:
                 if word in lowered:
                     agg.vocab_hits[group][word] += 1
 
-        # 2) Date-anchored + colon-anchored label discovery, line by line.
-        for line in collapse_lines(page_text):
-            label = None
-            match = LABEL_BEFORE_DATE_RE.match(line)
-            if match:
-                label = normalize_label(match.group(1))
-            else:
-                colon = LABEL_COLON_RE.match(line)
-                if colon:
-                    label = normalize_label(colon.group(1))
-
-            if not label or not WORD_RE.search(label):
+        # 2) Label discovery, line by line, covering three layouts.
+        lines = collapse_lines(page_text)
+        for idx, line in enumerate(lines):
+            # (a) inline: "<Label> dd.mm.yyyy <name>" on a single line.
+            inline = LABEL_BEFORE_DATE_RE.match(line)
+            if inline:
+                record(inline.group(1), line, "inline")
                 continue
 
-            agg.label_counts[label] += 1
-            if is_known(label):
-                found_known = True
-            examples = agg.label_examples[label]
-            if len(examples) < 3 and line not in examples:
-                examples.append(line)
+            # (b) colon: "<Label>: <value>" on a single line.
+            colon = LABEL_COLON_RE.match(line)
+            if colon:
+                record(colon.group(1), line, "inline")
+                continue
+
+            # (c) table/vertical: a lone label line, with the date (and usually
+            #     the name) on the following line(s). This is the common
+            #     "Datum / Name / Unterschrift" approval-table layout.
+            if is_label_like(line):
+                next_line = lines[idx + 1] if idx + 1 < len(lines) else ""
+                date_match = DATE_AT_START_RE.match(next_line)
+                if not date_match:
+                    continue
+                name = next_line[date_match.end():].strip()
+                if (
+                    not name
+                    and idx + 2 < len(lines)
+                    and not DATE_RE.search(lines[idx + 2])
+                    and not is_label_like(lines[idx + 2])
+                ):
+                    name = lines[idx + 2]
+                example = f"{line} | {date_match.group(0)}"
+                if name:
+                    example += f" | {name}"
+                record(line, example, "table")
 
     if found_known:
         agg.files_with_known += 1
@@ -209,6 +253,7 @@ def build_json(agg: Aggregate) -> dict:
         "files_with_known_role": agg.files_with_known,
         "files_without_known_role": agg.files_without_known,
         "read_errors": [{"file": f, "error": e} for f, e in agg.read_errors],
+        "layout_counts": dict(agg.layout_counts),
         "discovered_labels": discovered,
         "candidate_vocab_hits": {
             group: dict(counter.most_common())
@@ -225,7 +270,11 @@ def build_markdown(agg: Aggregate) -> str:
     lines.append(
         f"- Files with NO known role label: **{len(agg.files_without_known)}**"
     )
-    lines.append(f"- Read errors: **{len(agg.read_errors)}**\n")
+    lines.append(f"- Read errors: **{len(agg.read_errors)}**")
+    lines.append(
+        f"- Label layouts: inline=**{agg.layout_counts.get('inline', 0)}**, "
+        f"table=**{agg.layout_counts.get('table', 0)}**\n"
+    )
 
     unknown = [
         (label, count)
